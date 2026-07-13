@@ -10,6 +10,11 @@ each strategy's retrieved context, scores everything on both ground-truth
 retrieval metrics and LLM-judged answer quality, and produces a markdown
 comparison report with charts and concrete failure-case examples.
 
+**Live dashboard:** https://rag-eval-frontend-rjxu.onrender.com — the
+React/FastAPI deployment described in [`DEPLOYMENT.md`](DEPLOYMENT.md), with
+real evaluation results, five comparison charts, and a live query explorer
+running against the real corpus.
+
 ## Why this exists
 
 Teams that ship RAG systems usually eyeball a handful of queries and call it
