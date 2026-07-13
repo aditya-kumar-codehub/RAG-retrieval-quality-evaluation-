@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GroupedMetricChart } from "@/components/charts/GroupedMetricChart";
@@ -6,6 +7,7 @@ import { LoadingBlock, ErrorNotice } from "@/components/StateViews";
 import { useSummary } from "@/lib/queries";
 import { STRATEGY_ORDER, type StrategySummary } from "@/lib/api";
 import { pct, num } from "@/lib/format";
+import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 export function Analytics() {
   const { data, isLoading, isError, error } = useSummary();
@@ -22,82 +24,97 @@ export function Analytics() {
       {isError && <ErrorNotice message={(error as Error).message} />}
 
       {data && (
-        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
-          <Card className="xl:col-span-2">
-            <CardHeader>
-              <CardTitle>Retrieval quality (Precision, Recall, NDCG, MRR @5)</CardTitle>
-              <CardDescription>Ground-truth metrics against labeled relevant chunks — higher is better on all four</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <GroupedMetricChart
-                height={300}
-                valueFormatter={(v) => pct(v)}
-                rows={[
-                  row("Precision@5", data, (s) => s.precision_at_5),
-                  row("Recall@5", data, (s) => s.recall_at_5),
-                  row("NDCG@5", data, (s) => s.ndcg_at_5),
-                  row("MRR", data, (s) => s.mrr),
-                ]}
-              />
-            </CardContent>
-          </Card>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="grid grid-cols-1 gap-4 xl:grid-cols-2"
+        >
+          <motion.div variants={fadeInUp} className="xl:col-span-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Retrieval quality (Precision, Recall, NDCG, MRR @5)</CardTitle>
+                <CardDescription>Ground-truth metrics against labeled relevant chunks — higher is better on all four</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <GroupedMetricChart
+                  height={300}
+                  valueFormatter={(v) => pct(v)}
+                  rows={[
+                    row("Precision@5", data, (s) => s.precision_at_5),
+                    row("Recall@5", data, (s) => s.recall_at_5),
+                    row("NDCG@5", data, (s) => s.ndcg_at_5),
+                    row("MRR", data, (s) => s.mrr),
+                  ]}
+                />
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Faithfulness score</CardTitle>
-              <CardDescription>Share of generated claims the judge model could trace to retrieved context</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <StrategyBarChart
-                valueFormatter={(v) => pct(v)}
-                domain={[0, 1]}
-                data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].faithfulness_score }))}
-              />
-            </CardContent>
-          </Card>
+          <motion.div variants={fadeInUp}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Faithfulness score</CardTitle>
+                <CardDescription>Share of generated claims the judge model could trace to retrieved context</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <StrategyBarChart
+                  valueFormatter={(v) => pct(v)}
+                  domain={[0, 1]}
+                  data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].faithfulness_score }))}
+                />
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Hallucination rate</CardTitle>
-              <CardDescription>Share of answers containing at least one unsupported claim — lower is better</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <StrategyBarChart
-                valueFormatter={(v) => pct(v)}
-                domain={[0, 1]}
-                data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].hallucination_rate }))}
-              />
-            </CardContent>
-          </Card>
+          <motion.div variants={fadeInUp}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Hallucination rate</CardTitle>
+                <CardDescription>Share of answers containing at least one unsupported claim — lower is better</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <StrategyBarChart
+                  valueFormatter={(v) => pct(v)}
+                  domain={[0, 1]}
+                  data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].hallucination_rate }))}
+                />
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Answer relevance</CardTitle>
-              <CardDescription>LLM-judged 1–5 score for whether the answer addresses the question asked</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <StrategyBarChart
-                valueFormatter={(v) => num(v, 1)}
-                domain={[0, 5]}
-                data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].answer_relevance_score }))}
-              />
-            </CardContent>
-          </Card>
+          <motion.div variants={fadeInUp}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Answer relevance</CardTitle>
+                <CardDescription>LLM-judged 1–5 score for whether the answer addresses the question asked</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <StrategyBarChart
+                  valueFormatter={(v) => num(v, 1)}
+                  domain={[0, 5]}
+                  data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].answer_relevance_score }))}
+                />
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Trap abstention rate</CardTitle>
-              <CardDescription>On unanswerable trap questions, share of runs that correctly declined to answer</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <StrategyBarChart
-                valueFormatter={(v) => pct(v)}
-                domain={[0, 1]}
-                data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].trap_abstention_rate }))}
-              />
-            </CardContent>
-          </Card>
-        </div>
+          <motion.div variants={fadeInUp}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Trap abstention rate</CardTitle>
+                <CardDescription>On unanswerable trap questions, share of runs that correctly declined to answer</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <StrategyBarChart
+                  valueFormatter={(v) => pct(v)}
+                  domain={[0, 1]}
+                  data={STRATEGY_ORDER.map((s) => ({ strategy: s, value: data.summary[s].trap_abstention_rate }))}
+                />
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
       )}
     </div>
   );

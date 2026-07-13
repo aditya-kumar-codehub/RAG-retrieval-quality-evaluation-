@@ -36,6 +36,11 @@
   --strategy-dense: #5b7fd9;
   --strategy-hybrid: #14b8a6;
 
+  /* Third hue for the Overview hero's gradient mesh only — decorative
+     atmosphere, never used for data/status, so it's exempt from the
+     one-accent-everywhere rule the rest of the app follows. */
+  --hero-violet: #8b5cf6;
+
   /* Semantic status — reserved, never reused as decoration */
   --status-good: #2fa86b;
   --status-warning: #d9a441;
@@ -52,6 +57,16 @@
   --accent: var(--teal-600);
   --accent-contrast: #ffffff;
   --ring: var(--teal-500);
+
+  /* Soft elevation — low-opacity, theme-tuned; cards stay solid, not glassy */
+  --elevation-sm: 0 1px 2px rgba(15, 23, 34, 0.04), 0 1px 1px rgba(15, 23, 34, 0.03);
+  --elevation-md: 0 4px 12px rgba(15, 23, 34, 0.06), 0 2px 4px rgba(15, 23, 34, 0.04);
+  --elevation-lg: 0 12px 32px rgba(15, 23, 34, 0.08), 0 4px 10px rgba(15, 23, 34, 0.04);
+  --elevation-glow: 0 0 0 3px color-mix(in oklab, var(--accent) 16%, transparent);
+
+  /* Glass — reserved for chrome (nav, popovers), never data surfaces */
+  --glass-bg: color-mix(in oklab, var(--surface) 72%, transparent);
+  --glass-border: color-mix(in oklab, var(--border-strong) 70%, transparent);
 
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -75,6 +90,18 @@
   --strategy-bm25: #c2672a;
   --strategy-dense: #5b7fd9;
   --strategy-hybrid: #0f9e8c;
+
+  --hero-violet: #a78bfa;
+
+  /* Flat black shadows barely read on a dark surface — lean on opacity +
+     a faint top highlight to separate cards from the background instead. */
+  --elevation-sm: 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  --elevation-md: 0 6px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --elevation-lg: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --elevation-glow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent);
+
+  --glass-bg: color-mix(in oklab, var(--surface) 65%, transparent);
+  --glass-border: color-mix(in oklab, var(--border-strong) 60%, transparent);
 }
 
 @theme inline {
@@ -98,14 +125,24 @@
   --color-status-warning: var(--status-warning);
   --color-status-critical: var(--status-critical);
 
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+
+  --color-hero-violet: var(--hero-violet);
+
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --shadow-sm: var(--elevation-sm);
+  --shadow-md: var(--elevation-md);
+  --shadow-lg: var(--elevation-lg);
+  --shadow-glow: var(--elevation-glow);
 }
 
 * {
@@ -130,9 +167,124 @@ body {
   background: color-mix(in oklab, var(--accent) 30%, transparent);
 }
 
+/* Custom scrollbar — flat OS scrollbars are the fastest tell of an
+   otherwise-custom UI that wasn't finished. Firefox + WebKit variants. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+  background-clip: padding-box;
+}
+
 :focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+@keyframes ambient-drift {
+  /* Whole layer is oversized (inset: -15%) so this translate/scale never
+     reveals an edge. Slow and small — this sits behind real content on
+     every page, it should read as "the room has ambient light," not
+     "something is visibly moving." */
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2.5%, -2%) scale(1.04);
+  }
+  100% {
+    transform: translate(-2%, 2.5%) scale(1);
+  }
+}
+
+.ambient-bg-gradient {
+  background:
+    radial-gradient(ellipse 900px 700px at 22% 25%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 60%),
+    radial-gradient(ellipse 800px 800px at 78% 68%, color-mix(in oklab, var(--hero-violet) 12%, transparent), transparent 60%),
+    radial-gradient(ellipse 700px 600px at 50% 105%, color-mix(in oklab, var(--strategy-dense) 10%, transparent), transparent 60%);
+  animation: ambient-drift 90s ease-in-out infinite alternate;
+  /* Dark mode gets the full "dark gradient" treatment asked for; light
+     mode keeps the same structure but much fainter, so it reads as a soft
+     ambient tint rather than colored smudges on a white surface. */
+  opacity: 1;
+}
+
+:root:not(.dark) .ambient-bg-gradient {
+  opacity: 0.45;
+}
+
+@keyframes popover-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer-sweep {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--border) 30%,
+    color-mix(in oklab, var(--border-strong) 60%, var(--surface)) 50%,
+    var(--border) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-sweep 1.8s ease-in-out infinite;
+}
+
+.popover-surface {
+  animation: popover-in 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Small glossy sphere — same treatment as the isometric bars (lit highlight,
+   darker shadowed edge) shrunk down to a dot, in the single brand accent
+   used everywhere colored bars/dots now appear. Plain CSS on a real HTML
+   element, not SVG — var()/color-mix() are fully reliable here. */
+.strategy-dot-3d {
+  background: radial-gradient(
+    circle at 32% 28%,
+    color-mix(in oklab, var(--accent) 100%, white 55%) 0%,
+    var(--accent) 55%,
+    color-mix(in oklab, var(--accent) 100%, black 30%) 100%
+  );
+  box-shadow:
+    0 1px 2px color-mix(in oklab, var(--accent) 55%, transparent),
+    inset 0 -1px 1px color-mix(in oklab, var(--accent) 100%, black 22%);
 }
 
 @media (prefers-reduced-motion: reduce) {

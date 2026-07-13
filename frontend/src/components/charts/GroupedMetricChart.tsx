@@ -1,12 +1,22 @@
+import { useId } from "react";
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { Strategy } from "@/lib/api";
 import { STRATEGY_LABELS, STRATEGY_ORDER } from "@/lib/api";
-import { strategyColor } from "@/components/StrategyTag";
+import { ChartDropShadowDefs } from "@/components/charts/ChartDropShadowDefs";
+import { IsometricGlassBar } from "@/components/charts/IsometricGlassBar";
+import { useCssVars } from "@/lib/useCssVars";
 
 interface Row {
   metric: string;
   [strategy: string]: string | number;
 }
+
+// Every bar uses the single brand accent — not per-strategy color — per
+// explicit direction: bars are told apart by axis position + legend, not
+// color, so the chart stays visually unified with the rest of the app's
+// one-accent language.
+const ACCENT_VAR = "--accent";
+const ACCENT_FALLBACK = "#14b8a6";
 
 export function GroupedMetricChart({
   rows,
@@ -17,9 +27,16 @@ export function GroupedMetricChart({
   valueFormatter: (v: number) => string;
   height?: number;
 }) {
+  // Strip colons from React's useId() output — no reason to gamble on
+  // colon-handling in url(#...) fragment refs across browsers.
+  const uid = useId().replace(/:/g, "");
+  const resolved = useCssVars([ACCENT_VAR]);
+  const accentColor = resolved[ACCENT_VAR] || ACCENT_FALLBACK;
+
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <BarChart data={rows} margin={{ top: 8, right: 8, left: -12, bottom: 0 }} barCategoryGap="20%">
+      <BarChart data={rows} margin={{ top: 14, right: 20, left: -12, bottom: 0 }} barCategoryGap="24%">
+        <ChartDropShadowDefs uid={uid} />
         <CartesianGrid vertical={false} stroke="var(--border)" strokeDasharray="3 3" />
         <XAxis
           dataKey="metric"
@@ -41,7 +58,8 @@ export function GroupedMetricChart({
           contentStyle={{
             background: "var(--surface-raised)",
             border: "1px solid var(--border)",
-            borderRadius: 8,
+            borderRadius: "var(--radius-md)",
+            boxShadow: "var(--elevation-lg, 0 12px 32px rgba(0,0,0,0.12))",
             fontSize: 12,
             color: "var(--text-primary)",
           }}
@@ -54,7 +72,16 @@ export function GroupedMetricChart({
           iconSize={8}
         />
         {STRATEGY_ORDER.map((s: Strategy) => (
-          <Bar key={s} dataKey={s} name={STRATEGY_LABELS[s]} fill={strategyColor(s)} radius={[4, 4, 0, 0]} maxBarSize={28} />
+          <Bar
+            key={s}
+            dataKey={s}
+            name={STRATEGY_LABELS[s]}
+            fill={accentColor}
+            maxBarSize={24}
+            animationDuration={650}
+            animationEasing="ease-out"
+            shape={(shapeProps: unknown) => <IsometricGlassBar {...(shapeProps as object)} uid={uid} />}
+          />
         ))}
       </BarChart>
     </ResponsiveContainer>

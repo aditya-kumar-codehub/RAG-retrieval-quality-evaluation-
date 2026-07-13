@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import { Layers, GitBranch, Server, Cpu, ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 const PIPELINE_STEPS = [
   { title: "Corpus + eval set", detail: "40 synthetic internal-docs pages, 28 labeled questions (single-hop, multi-hop, trap)." },
@@ -42,38 +44,52 @@ export function About() {
       </Card>
 
       <h2 className="mb-3 mt-8 font-display text-[18px] font-semibold text-text-primary">Pipeline</h2>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5"
+      >
         {PIPELINE_STEPS.map((step, i) => (
-          <Card key={step.title} className="p-4">
-            <span className="font-mono text-[11px] text-text-muted">{String(i + 1).padStart(2, "0")}</span>
-            <p className="mt-1 font-display text-[13.5px] font-semibold text-text-primary">{step.title}</p>
-            <p className="mt-1.5 text-[12.5px] leading-relaxed text-text-secondary">{step.detail}</p>
-          </Card>
+          <motion.div key={step.title} variants={fadeInUp}>
+            <Card className="p-4">
+              <span className="font-mono text-[11px] text-accent">{String(i + 1).padStart(2, "0")}</span>
+              <p className="mt-1 font-display text-[13.5px] font-semibold text-text-primary">{step.title}</p>
+              <p className="mt-1.5 text-[12.5px] leading-relaxed text-text-secondary">{step.detail}</p>
+            </Card>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <h2 className="mb-3 mt-8 font-display text-[18px] font-semibold text-text-primary">Tech stack</h2>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+      >
         {STACK.map((s) => (
-          <Card key={s.label}>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <s.icon className="size-4 text-accent" />
-                <CardTitle>{s.label}</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-1.5">
-                {s.items.map((item) => (
-                  <Badge key={item} variant="neutral">
-                    {item}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          <motion.div key={s.label} variants={fadeInUp}>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <s.icon className="size-4 text-accent" />
+                  <CardTitle>{s.label}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-1.5">
+                  {s.items.map((item) => (
+                    <Badge key={item} variant="neutral">
+                      {item}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <Card className="mt-6">
         <CardHeader>

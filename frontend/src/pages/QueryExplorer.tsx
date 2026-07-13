@@ -13,6 +13,8 @@ import { InlineSpinner } from "@/components/StateViews";
 import { useHealth } from "@/lib/queries";
 import { api, ApiError, STRATEGY_LABELS, type GenerateResponse, type RetrieveResponse, type Strategy } from "@/lib/api";
 import { pct } from "@/lib/format";
+import { cn } from "@/lib/utils";
+import { staggerContainer, fadeInUp } from "@/lib/motion";
 
 const SAMPLE_QUESTIONS = [
   "What is Northwind Cloud's PTO accrual rate?",
@@ -96,7 +98,7 @@ export function QueryExplorer() {
             <button
               key={q}
               onClick={() => setQuestion(q)}
-              className="rounded-full border border-border-strong px-3 py-1 text-[12px] text-text-secondary transition-colors hover:bg-surface"
+              className="rounded-full border border-border-strong px-3 py-1 text-[12px] text-text-secondary transition-[background-color,border-color,transform] duration-150 hover:border-accent/30 hover:bg-surface active:scale-[0.97]"
             >
               {q}
             </button>
@@ -130,7 +132,7 @@ export function QueryExplorer() {
 
 function RetrievalPanel({ mutation }: { mutation: ReturnType<typeof useMutation<RetrieveResponse, Error, void>> }) {
   return (
-    <Card>
+    <Card className={cn("transition-shadow duration-300", mutation.isPending && "shadow-glow")}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <FileSearch className="size-4 text-accent" /> Retrieved chunks
@@ -141,25 +143,26 @@ function RetrievalPanel({ mutation }: { mutation: ReturnType<typeof useMutation<
         {mutation.isPending && <InlineSpinner label="Retrieving..." />}
         {mutation.isError && <ErrorBanner error={mutation.error} />}
         {mutation.data && (
-          <div className="flex flex-col gap-3">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="flex flex-col gap-3">
             {mutation.data.results.map((r) => (
               <motion.div
                 key={r.chunk_id}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: r.rank * 0.04 }}
-                className="rounded-[var(--radius-md)] border border-border p-3"
+                variants={fadeInUp}
+                className="rounded-[var(--radius-md)] border border-border bg-surface-raised p-3 transition-colors hover:border-accent/25"
               >
-                <div className="mb-1.5 flex items-center justify-between">
-                  <span className="text-[12px] font-semibold text-text-primary">
-                    #{r.rank} · {r.doc_title}
+                <div className="mb-1.5 flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-2 text-[12px] font-semibold text-text-primary">
+                    <span className="flex size-4.5 items-center justify-center rounded-full bg-accent/15 font-mono text-[10px] text-accent">
+                      {r.rank}
+                    </span>
+                    {r.doc_title}
                   </span>
                   <span className="font-mono text-[11px] text-text-muted">score {r.score.toFixed(3)}</span>
                 </div>
-                <p className="line-clamp-3 text-[12.5px] text-text-secondary">{r.text}</p>
+                <p className="line-clamp-3 text-[12.5px] leading-relaxed text-text-secondary">{r.text}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </CardContent>
     </Card>
@@ -168,7 +171,7 @@ function RetrievalPanel({ mutation }: { mutation: ReturnType<typeof useMutation<
 
 function GenerationPanel({ mutation }: { mutation: ReturnType<typeof useMutation<GenerateResponse, Error, void>> }) {
   return (
-    <Card>
+    <Card className={cn("transition-shadow duration-300", mutation.isPending && "shadow-glow")}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Sparkles className="size-4 text-accent" /> Generated answer
@@ -180,21 +183,29 @@ function GenerationPanel({ mutation }: { mutation: ReturnType<typeof useMutation
         {mutation.isError && <ErrorBanner error={mutation.error} />}
         <AnimatePresence>
           {mutation.data && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-4">
-              <div className="flex flex-wrap items-center gap-2">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="flex flex-col gap-4"
+            >
+              <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2">
                 <StrategyTag strategy={mutation.data.strategy} />
                 <Badge variant="neutral">{mutation.data.model}</Badge>
                 <Badge variant={mutation.data.has_unsupported_claim ? "critical" : "good"}>
                   faithfulness {pct(mutation.data.faithfulness_score)}
                 </Badge>
                 <Badge variant="accent">relevance {mutation.data.answer_relevance_score}/5</Badge>
-              </div>
+              </motion.div>
 
-              <p className="rounded-[var(--radius-md)] border border-border bg-surface p-3 text-[13.5px] leading-relaxed text-text-primary">
+              <motion.p
+                variants={fadeInUp}
+                className="rounded-[var(--radius-md)] border border-border bg-surface p-3.5 text-[13.5px] leading-relaxed text-text-primary"
+              >
                 {mutation.data.answer}
-              </p>
+              </motion.p>
 
-              <div>
+              <motion.div variants={fadeInUp}>
                 <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-text-muted">
                   Claims ({mutation.data.claims.length})
                 </p>
@@ -213,9 +224,11 @@ function GenerationPanel({ mutation }: { mutation: ReturnType<typeof useMutation
                     <p className="text-[12.5px] text-text-muted">No factual claims extracted — likely an abstention.</p>
                   )}
                 </div>
-              </div>
+              </motion.div>
 
-              <p className="text-[12px] text-text-muted">{mutation.data.answer_relevance_explanation}</p>
+              <motion.p variants={fadeInUp} className="text-[12px] text-text-muted">
+                {mutation.data.answer_relevance_explanation}
+              </motion.p>
             </motion.div>
           )}
         </AnimatePresence>

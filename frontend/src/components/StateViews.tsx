@@ -26,10 +26,12 @@ export function InlineSpinner({ label }: { label?: string }) {
 
 export function ErrorNotice({ message }: { message: string }) {
   return (
-    <div className="flex items-start gap-3 rounded-[var(--radius-md)] border border-status-critical/30 bg-status-critical/8 p-4 text-[13px] text-status-critical">
-      <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+    <div className="flex items-start gap-3 rounded-[var(--radius-md)] border border-status-critical/25 bg-status-critical/6 p-4 text-[13px]">
+      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-status-critical/15 text-status-critical">
+        <AlertTriangle className="size-3.5" />
+      </span>
       <div>
-        <p className="font-medium">Couldn't load data</p>
+        <p className="font-medium text-status-critical">Couldn't load data</p>
         <p className="mt-0.5 text-text-secondary">{message}</p>
       </div>
     </div>

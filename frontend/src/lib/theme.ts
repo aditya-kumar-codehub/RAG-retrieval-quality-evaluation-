@@ -3,10 +3,6 @@ import { useEffect, useState } from "react";
 export type Theme = "light" | "dark";
 const STORAGE_KEY = "rag-eval-theme";
 
-function systemTheme(): Theme {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
 function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle("dark", theme === "dark");
 }
@@ -14,7 +10,9 @@ function applyTheme(theme: Theme) {
 export function useTheme() {
   const [theme, setThemeState] = useState<Theme>(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-    return stored ?? systemTheme();
+    // Dark-first by default (matches Linear/Vercel/Raycast/Stripe dashboard),
+    // rather than following OS preference — still fully overridable via the toggle.
+    return stored ?? "dark";
   });
 
   useEffect(() => {

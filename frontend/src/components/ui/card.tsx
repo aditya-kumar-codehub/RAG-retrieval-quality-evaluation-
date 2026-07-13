@@ -1,16 +1,30 @@
 import * as React from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { hoverLift } from "@/lib/motion";
 
-export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn(
-        "rounded-[var(--radius-lg)] border border-border bg-surface-raised",
-        className,
-      )}
-      {...props}
-    />
+type CardBaseProps = Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+>;
+
+interface CardProps extends CardBaseProps {
+  /** Adds a subtle hover-lift + shadow increase for clickable/interactive cards. */
+  interactive?: boolean;
+}
+
+export function Card({ className, interactive = false, ...props }: CardProps) {
+  const base = cn(
+    "rounded-[var(--radius-lg)] border border-border bg-surface-raised shadow-sm transition-shadow",
+    interactive && "cursor-pointer hover:shadow-md hover:border-border-strong",
+    className,
   );
+
+  if (interactive) {
+    return <motion.div className={base} {...hoverLift} {...(props as HTMLMotionProps<"div">)} />;
+  }
+
+  return <div className={base} {...props} />;
 }
 
 export function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { ChevronDown, ChevronUp, Download, Search } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChevronDown, Download, Search } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,7 @@ import { LoadingBlock, ErrorNotice } from "@/components/StateViews";
 import { useResults } from "@/lib/queries";
 import { STRATEGY_LABELS, type EvalResult, type Strategy } from "@/lib/api";
 import { pct } from "@/lib/format";
+import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 10;
 
@@ -106,7 +108,7 @@ export function DataExplorer() {
           />
         </div>
         <Select value={strategy} onValueChange={(v) => resetPage(setStrategy)(v as Strategy | "all")}>
-          <SelectTrigger className="w-full sm:w-44">
+          <SelectTrigger className={cn("w-full sm:w-44", strategy !== "all" && "border-accent/40 text-accent")}>
             <SelectValue placeholder="Strategy" />
           </SelectTrigger>
           <SelectContent>
@@ -117,7 +119,7 @@ export function DataExplorer() {
           </SelectContent>
         </Select>
         <Select value={trapOnly} onValueChange={(v) => resetPage(setTrapOnly)(v as typeof trapOnly)}>
-          <SelectTrigger className="w-full sm:w-44">
+          <SelectTrigger className={cn("w-full sm:w-44", trapOnly !== "all" && "border-accent/40 text-accent")}>
             <SelectValue placeholder="Question type" />
           </SelectTrigger>
           <SelectContent>
@@ -198,9 +200,21 @@ export function DataExplorer() {
 function ResultRow({ row, isOpen, onToggle }: { row: EvalResult; isOpen: boolean; onToggle: () => void }) {
   return (
     <>
-      <tr className="cursor-pointer border-b border-border transition-colors hover:bg-surface" onClick={onToggle}>
+      <tr
+        className={cn(
+          "cursor-pointer border-b border-border transition-colors hover:bg-surface",
+          isOpen && "bg-surface",
+        )}
+        onClick={onToggle}
+      >
         <td className="px-4 py-3 text-text-muted">
-          {isOpen ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
+          <motion.span
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex"
+          >
+            <ChevronDown className="size-4" />
+          </motion.span>
         </td>
         <td className="max-w-[360px] truncate px-2 py-3 text-text-primary">{row.question}</td>
         <td className="px-2 py-3">
@@ -220,6 +234,11 @@ function ResultRow({ row, isOpen, onToggle }: { row: EvalResult; isOpen: boolean
       {isOpen && (
         <tr className="border-b border-border bg-surface/60">
           <td colSpan={8} className="px-6 py-4">
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            >
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-text-muted">
@@ -255,6 +274,7 @@ function ResultRow({ row, isOpen, onToggle }: { row: EvalResult; isOpen: boolean
                 </div>
               </div>
             )}
+            </motion.div>
           </td>
         </tr>
       )}

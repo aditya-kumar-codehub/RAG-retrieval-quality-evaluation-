@@ -14,7 +14,7 @@ export function SelectTrigger({
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "flex h-9 items-center justify-between gap-2 rounded-[var(--radius-md)] border border-border-strong bg-surface-raised px-3 text-[13px] text-text-primary outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        "flex h-9 items-center justify-between gap-2 rounded-[var(--radius-md)] border border-border-strong bg-surface-raised px-3 text-[13px] text-text-primary outline-none transition-[box-shadow,border-color] duration-150 focus-visible:border-accent/50 focus-visible:shadow-glow data-[state=open]:border-accent/50 data-[state=open]:shadow-glow",
         className,
       )}
       {...props}
@@ -36,7 +36,7 @@ export function SelectContent({
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         className={cn(
-          "z-50 overflow-hidden rounded-[var(--radius-md)] border border-border bg-surface-raised shadow-lg",
+          "popover-surface z-50 overflow-hidden rounded-[var(--radius-md)] border shadow-lg",
           className,
         )}
         position="popper"
@@ -57,7 +57,7 @@ export function SelectItem({
   return (
     <SelectPrimitive.Item
       className={cn(
-        "relative flex cursor-pointer select-none items-center rounded-[calc(var(--radius-md)-4px)] py-1.5 pl-7 pr-3 text-[13px] text-text-primary outline-none data-[highlighted]:bg-surface",
+        "relative flex cursor-pointer select-none items-center rounded-[calc(var(--radius-md)-4px)] py-1.5 pl-7 pr-3 text-[13px] text-text-primary outline-none transition-colors data-[highlighted]:bg-accent/10",
         className,
       )}
       {...props}

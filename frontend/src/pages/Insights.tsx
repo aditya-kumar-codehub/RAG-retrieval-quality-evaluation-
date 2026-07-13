@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle2, SearchX } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 const FAILURE_CASES = [
   {
@@ -36,87 +39,114 @@ export function Insights() {
         description="An honest read of the results — including where the evaluation framework itself has limits."
       />
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <Card className="lg:col-span-3">
-          <CardHeader>
-            <CardTitle>The headline finding</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-[14px] leading-relaxed text-text-secondary">
-              Ranked by NDCG@5 then faithfulness as a tiebreaker, <strong className="text-text-primary">Dense</strong>{" "}
-              edges out BM25 and Hybrid on retrieval — but by a razor-thin margin, and{" "}
-              <strong className="text-text-primary">Hybrid actually leads on answer relevance</strong> (4.36/5 vs.
-              4.14 and 3.68). On a 40-document corpus, the honest conclusion is that all three strategies are roughly
-              equivalent: retrieval isn't the bottleneck here. A larger or lexically harder corpus would be needed to
-              meaningfully separate BM25 from dense embeddings — the near-tie is itself a useful finding, not a
-              non-result.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Retrieval quality</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-[13.5px] leading-relaxed text-text-secondary">
-              Zero non-trap questions had a complete retrieval miss for any strategy. Precision@5 sits around 0.21
-              simply because most questions have only 1–2 gold-relevant chunks among the 5 retrieved — a property of
-              the eval set, not a retrieval failure.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Faithfulness</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-[13.5px] leading-relaxed text-text-secondary">
-              BM25 and Dense hit 1.00 faithfulness; Hybrid dips to 0.97 with a 7.1% hallucination rate. That's one
-              real hallucination in 84 (question, strategy) pairs — see Case 1 below.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Trap questions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-[13.5px] leading-relaxed text-text-secondary">
-              Dense's 83.3% trap-abstention rate looks like a strategy weakness but isn't — it's a single judge
-              artifact (Case 3). BM25 and Hybrid both hit 100% abstention on unanswerable questions.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <h2 className="mb-3 mt-8 font-display text-[18px] font-semibold text-text-primary">Example failure cases</h2>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        {FAILURE_CASES.map((c) => (
-          <Card key={c.title}>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="grid grid-cols-1 gap-4 lg:grid-cols-3"
+      >
+        <motion.div variants={fadeInUp} className="lg:col-span-3">
+          <Card>
             <CardHeader>
-              <div className="flex items-center gap-2">
-                <c.icon
-                  className={
-                    c.tone === "critical"
-                      ? "size-4 text-status-critical"
-                      : c.tone === "warning"
-                        ? "size-4 text-status-warning"
-                        : "size-4 text-text-muted"
-                  }
-                />
-                <Badge variant="neutral">{c.strategy}</Badge>
-              </div>
-              <CardTitle className="mt-1">{c.title}</CardTitle>
+              <CardTitle>The headline finding</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-[13px] leading-relaxed text-text-secondary">{c.body}</p>
+              <p className="text-[14px] leading-relaxed text-text-secondary">
+                Ranked by NDCG@5 then faithfulness as a tiebreaker, <strong className="text-text-primary">Dense</strong>{" "}
+                edges out BM25 and Hybrid on retrieval — but by a razor-thin margin, and{" "}
+                <strong className="text-text-primary">Hybrid actually leads on answer relevance</strong> (4.36/5 vs.
+                4.14 and 3.68). On a 40-document corpus, the honest conclusion is that all three strategies are roughly
+                equivalent: retrieval isn't the bottleneck here. A larger or lexically harder corpus would be needed to
+                meaningfully separate BM25 from dense embeddings — the near-tie is itself a useful finding, not a
+                non-result.
+              </p>
             </CardContent>
           </Card>
+        </motion.div>
+
+        <motion.div variants={fadeInUp}>
+          <Card>
+            <CardHeader>
+              <CardTitle>Retrieval quality</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-[13.5px] leading-relaxed text-text-secondary">
+                Zero non-trap questions had a complete retrieval miss for any strategy. Precision@5 sits around 0.21
+                simply because most questions have only 1–2 gold-relevant chunks among the 5 retrieved — a property of
+                the eval set, not a retrieval failure.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div variants={fadeInUp}>
+          <Card>
+            <CardHeader>
+              <CardTitle>Faithfulness</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-[13.5px] leading-relaxed text-text-secondary">
+                BM25 and Dense hit 1.00 faithfulness; Hybrid dips to 0.97 with a 7.1% hallucination rate. That's one
+                real hallucination in 84 (question, strategy) pairs — see Case 1 below.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div variants={fadeInUp}>
+          <Card>
+            <CardHeader>
+              <CardTitle>Trap questions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-[13.5px] leading-relaxed text-text-secondary">
+                Dense's 83.3% trap-abstention rate looks like a strategy weakness but isn't — it's a single judge
+                artifact (Case 3). BM25 and Hybrid both hit 100% abstention on unanswerable questions.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </motion.div>
+
+      <h2 className="mb-3 mt-8 font-display text-[18px] font-semibold text-text-primary">Example failure cases</h2>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="grid grid-cols-1 gap-4 lg:grid-cols-3"
+      >
+        {FAILURE_CASES.map((c) => (
+          <motion.div key={c.title} variants={fadeInUp}>
+            <Card
+              className={cn(
+                "border-t-2",
+                c.tone === "critical" && "border-t-status-critical",
+                c.tone === "warning" && "border-t-status-warning",
+                c.tone === "neutral" && "border-t-border-strong",
+              )}
+            >
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <c.icon
+                    className={
+                      c.tone === "critical"
+                        ? "size-4 text-status-critical"
+                        : c.tone === "warning"
+                          ? "size-4 text-status-warning"
+                          : "size-4 text-text-muted"
+                    }
+                  />
+                  <Badge variant="neutral">{c.strategy}</Badge>
+                </div>
+                <CardTitle className="mt-1">{c.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[13px] leading-relaxed text-text-secondary">{c.body}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <Card className="mt-6">
         <CardHeader>
