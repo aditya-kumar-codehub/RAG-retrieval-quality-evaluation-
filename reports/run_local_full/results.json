@@ -1,0 +1,4883 @@
+[
+  {
+    "question_id": "q01",
+    "question": "What is Northwind Cloud's PTO accrual rate, and is there a waiting period before it starts?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Employees accrue 20 days of PTO per year, at a rate of 1.67 days per month, starting from their very first day of employment with no waiting period.",
+    "relevant_chunk_ids": [
+      "pto-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0",
+      "data-processing-agreement-0",
+      "custom-domains-0",
+      "webhooks-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud employees accrue paid time off (PTO) at a rate of 20 days per year, accrued monthly at a rate of 1.67 days per month starting from the first day of employment \u2014 there is no waiting period before accrual begins.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud employees accrue paid time off (PTO) at a rate of 20 days per year",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "employees accrue PTO monthly at a rate of 1.67 days per month starting from the first day of employment",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "there is no waiting period before accrual begins",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provided addresses two aspects: the PTO accrual rate (20 days per year) and whether there's a waiting period before accrual starts (no waiting period). Although it contains accurate information, it does not specifically address the question since it also provides details about the monthly accrual rate. The answer could be more focused on clarifying the specific points of interest.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q02",
+    "question": "What is the maximum number of unused PTO days an employee can carry over into the next year, and what's the deadline to use them?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Employees may carry over up to 5 unused PTO days into the following year, and those carried-over days must be used by March 31 of that year or they are forfeited.",
+    "relevant_chunk_ids": [
+      "pto-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "data-processing-agreement-0",
+      "parental-leave-0",
+      "data-export-0",
+      "benefits-overview-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The maximum number of unused PTO days an employee can carry over into the next year is 5. The deadline to use these carried-over days is March 31 of the following year or they are forfeited and not paid out a second time.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The maximum number of unused PTO days an employee can carry over into the next year is 5.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "The deadline to use these carried-over days is March 31 of the following year or they are forfeited and not paid out a second time.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly addresses the question by giving specific information about the maximum number of unused PTO days an employee can carry over into the next year (5) and the deadline to use them (March 31 of the following year). This fully answers both parts of the original question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q03",
+    "question": "How often is the sandbox environment's database reset?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "The sandbox database is reset every Sunday at 00:00 UTC, wiping all test data created during the week.",
+    "relevant_chunk_ids": [
+      "sandbox-environment-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sandbox-environment-0",
+      "authentication-0",
+      "disaster-recovery-0",
+      "rollback-procedure-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The sandbox database is reset every Sunday at 00:00 UTC.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The sandbox database is reset every Sunday at 00:00 UTC.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sandbox-environment-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses how frequently the sandbox environment's database is reset, specifying the day and time of the reset (every Sunday at 00:00 UTC). This information precisely answers the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q04",
+    "question": "How many API calls per month are included in the Free pricing tier?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "The Free tier includes 1,000 API calls per month.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pricing-tiers-0",
+      "billing-invoicing-0",
+      "rate-limits-0",
+      "data-retention-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The Free pricing tier includes 1,000 API calls per month.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Free tier includes 1,000 API calls per month",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pricing-tiers-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the question asked by specifying that the Free pricing tier includes 1,000 API calls per month. It accurately responds to the inquiry without evading or providing irrelevant information.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q05",
+    "question": "What are Northwind Cloud's Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for disaster recovery?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "The disaster recovery plan targets an RTO of 4 hours and an RPO of 15 minutes for all customer-facing production systems.",
+    "relevant_chunk_ids": [
+      "disaster-recovery-0"
+    ],
+    "retrieved_chunk_ids": [
+      "disaster-recovery-0",
+      "database-migration-runbook-0",
+      "access-control-runbook-0",
+      "postmortem-process-0",
+      "incident-response-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud's RTO is 4 hours and its RPO is 15 minutes.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud's RTO is 4 hours",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud's RPO is 15 minutes",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly addresses the specific question asked about Northwind Cloud's Recovery Time Objective (RTO) and Recovery Point Objective (RPO). It gives clear, numerical values for both metrics, which are exactly what was queried in the question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q06",
+    "question": "How much is the weekly stipend for being primary on-call, and what other compensation do on-call engineers receive?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Primary on-call engineers receive a $200 stipend per week (secondary on-call receives $100 per week), plus one floating comp day to be used within 30 days of the rotation ending.",
+    "relevant_chunk_ids": [
+      "on-call-rotation-0"
+    ],
+    "retrieved_chunk_ids": [
+      "on-call-rotation-0",
+      "deployment-process-0",
+      "secrets-management-0",
+      "incident-response-0",
+      "postmortem-process-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The weekly stipend for being primary on-call is $200. On-call engineers also receive a secondary rotation stipend of $100 per week, along with one floating comp day to be used within 30 days of the rotation ending.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The weekly stipend for being primary on-call is $200.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "on-call-rotation-0"
+        ]
+      },
+      {
+        "text": "On-call engineers also receive a secondary rotation stipend of $100 per week.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "on-call-rotation-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provides specific information about the weekly stipend for primary on-call and includes details about additional compensation. However, it does not cover other forms of compensation that are commonly provided to on-call engineers such as bonuses, performance-based rewards, or any form of non-monetary benefits.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q07",
+    "question": "What is Northwind Cloud's 401(k) matching policy?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Northwind Cloud offers a 401(k) with a 4% match, dollar-for-dollar, vested immediately with no vesting cliff.",
+    "relevant_chunk_ids": [
+      "benefits-overview-0"
+    ],
+    "retrieved_chunk_ids": [
+      "benefits-overview-0",
+      "data-processing-agreement-0",
+      "sandbox-environment-0",
+      "authentication-0",
+      "data-export-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud offers a 401(k) retirement plan with a 4% match, dollar-for-dollar, vested immediately. Employees do not have to wait for any open enrollment period; they can enroll at any time.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Employees do not have to wait for any open enrollment period; they can enroll at any time.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The provided answer does not address the specific details regarding Northwind Cloud's 401(k) matching policy as asked. Instead of providing information about the company's 4% match, it offers general information on how to enroll in such a plan and when the vesting occurs. The question specifically asks for the match percentage, which is not mentioned.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q08",
+    "question": "How many times does Northwind Cloud retry a failed webhook delivery, and on what schedule?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Northwind Cloud retries a failed webhook delivery 5 times, on a backoff schedule of 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours after the initial attempt.",
+    "relevant_chunk_ids": [
+      "webhooks-0"
+    ],
+    "retrieved_chunk_ids": [
+      "webhooks-0",
+      "rate-limits-0",
+      "data-processing-agreement-0",
+      "data-export-0",
+      "billing-invoicing-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud retries a failed webhook delivery up to 5 times with a backoff schedule of 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours, for a total of 5 retry attempts before marking the event as failed. After the final attempt fails, the event is marked as failed and visible in the dashboard's webhook delivery log, where it can be manually redelivered.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud retries a failed webhook delivery up to 5 times",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      },
+      {
+        "text": "After the final attempt fails, Northwind Cloud marks the event as failed and visible in the dashboard's webhook delivery log",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provides information about how Northwind Cloud retries a failed webhook delivery, including the number of retry attempts (5) and the schedule for each retry attempt (1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours). However, it does not directly address the specific question asked, which was specifically inquiring about how many times Northwind Cloud retries a failed webhook delivery. The answer gives some details but does not provide a clear, direct response to the exact number of retry attempts requested.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q09",
+    "question": "What laptop do new employees receive, and how often is it refreshed?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "New employees are issued a MacBook Pro 14\" laptop, which is refreshed every 3 years (or sooner if hardware fails beyond economical repair).",
+    "relevant_chunk_ids": [
+      "equipment-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "equipment-policy-0",
+      "remote-work-policy-0",
+      "onboarding-checklist-0",
+      "data-processing-agreement-0",
+      "data-export-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "New employees receive a standard-configuration MacBook Pro 14\" on their start date. The laptops are refreshed every 3 years, or sooner if hardware fails and is beyond economical repair.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "New employees receive a standard-configuration MacBook Pro 14\" laptop on their start date.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "equipment-policy-0"
+        ]
+      },
+      {
+        "text": "The laptops are refreshed every 3 years, or sooner if hardware fails and is beyond economical repair.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "equipment-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provides specific information about the type of laptop new employees receive (MacBook Pro 14\" with standard configuration) and how often it gets refreshed (every 3 years). However, the question asks for details on both the initial laptop received by new employees and its refresh schedule. The given answer only addresses one aspect of this question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q10",
+    "question": "When is Northwind Cloud's weekly deploy freeze, and is there any exception to it?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "There is a deploy freeze every Friday after 2:00 PM through the following Monday morning, except for critical hotfixes approved by the on-call engineering lead.",
+    "relevant_chunk_ids": [
+      "deployment-process-0"
+    ],
+    "retrieved_chunk_ids": [
+      "deployment-process-0",
+      "custom-domains-0",
+      "rollback-procedure-0",
+      "webhooks-0",
+      "sso-saml-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud observes a deploy freeze every Friday after 2:00 PM in the primary engineering time zone, through the following Monday morning. There are exceptions for critical hotfixes approved by the on-call engineering lead as part of the incident response process described in `incident-response.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud observes a deploy freeze every Friday after 2:00 PM in the primary engineering time zone, through the following Monday morning.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "deployment-process-0"
+        ]
+      },
+      {
+        "text": "There are exceptions for critical hotfixes approved by the on-call engineering lead as part of the incident response process described in `incident-response.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "deployment-process-0",
+          "incident-response-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 4,
+    "answer_relevance_explanation": "The answer provides details about Northwind Cloud's weekly deploy freeze schedule and mentions that there can be exceptions, which is relevant to the question. However, it does not explicitly state the date or time for the current week's deploy freeze as asked in the original question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q11",
+    "question": "Which identity providers does Northwind Cloud support for SSO?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Northwind Cloud supports Okta, Azure AD, and Google Workspace as identity providers for SAML-based SSO.",
+    "relevant_chunk_ids": [
+      "sso-saml-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sso-saml-0",
+      "pricing-tiers-0",
+      "authentication-0",
+      "customer-support-sla-0",
+      "audit-logs-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud supports the following identity providers for SSO: Okta, Azure AD, and Google Workspace.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "[sso-saml-0] Northwind Cloud supports the following identity providers for SSO: Okta, Azure AD, and Google Workspace.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly addresses the question by listing specific identity providers supported by Northwind Cloud for Single Sign-On (SSO). The answer is relevant because it provides a clear and direct response to the inquiry.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q12",
+    "question": "What is the minimum password length required by Northwind Cloud's security policy, and does the company force periodic password rotation?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Passwords must be at least 14 characters. Northwind Cloud does not enforce periodic forced password rotation; instead, passwords are checked against known-breach databases and must be changed immediately if a match is found.",
+    "relevant_chunk_ids": [
+      "security-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "security-policy-0",
+      "code-of-conduct-0",
+      "remote-work-policy-0",
+      "incident-response-0",
+      "benefits-overview-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The minimum password length required by Northwind Cloud's security policy is 14 characters. Periodic password rotation is not enforced; instead, passwords are checked against known-breach databases and must be changed immediately if a match is found.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Passwords must be a minimum of 14 characters.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "password-policy-0"
+        ]
+      },
+      {
+        "text": "Periodic password rotation is not enforced by Northwind Cloud's security policy.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "password-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provides information about the minimum password length and password rotation policy of Northwind Cloud's security policy. However, it does not directly address whether periodic password rotation is enforced or not. The question specifically asks for a yes/no response to this point.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q13",
+    "question": "If I'm on the Pro tier and my application starts hitting 429 errors, what's my rate limit and what retry strategy should I implement?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "The Pro tier is rate limited to 1,500 requests per minute. When you hit a 429, you should implement exponential backoff with jitter, starting at a 1-second delay and doubling on each subsequent 429, capped at 60 seconds, rather than retrying immediately in a tight loop.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0",
+      "rate-limits-0"
+    ],
+    "retrieved_chunk_ids": [
+      "rate-limits-0",
+      "webhooks-0",
+      "data-processing-agreement-0",
+      "onboarding-checklist-0",
+      "error-codes-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "For the Pro tier, your rate limit is 1,500 requests per minute. When your application hits a 429 error, you should implement an exponential backoff with jitter: start with a 1-second delay and double it on each subsequent occurrence of a 429 until the cap at 60 seconds.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "For the Pro tier, your rate limit is 1,500 requests per minute.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "rate-limits-0"
+        ]
+      },
+      {
+        "text": "When your application hits a 429 error, you should implement an exponential backoff with jitter: start with a 1-second delay and double it on each subsequent occurrence of a 429 until the cap at 60 seconds.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "rate-limits-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provides specific information about rate limits for the Pro tier (1,500 requests per minute) and suggests an exponential backoff with jitter strategy to handle 429 errors. Although it does not directly address whether the questioner is on the Pro tier or the exact details of their current usage status, which were asked in the original query, this information could be inferred as useful context for resolving the issue.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q14",
+    "question": "Does the Pro tier include SSO? If not, what tier do I need, and what happens automatically when SSO is enabled?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "No, SSO/SAML is not included on the Pro tier \u2014 it's an Enterprise-only feature. Enabling SSO automatically enables audit logging for the account, and audit logs cannot be disabled while SSO remains active.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0",
+      "sso-saml-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sso-saml-0",
+      "audit-logs-0",
+      "billing-invoicing-0",
+      "data-processing-agreement-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.8503449055347546,
+        "10": 0.8503449055347546
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The Pro tier does not include SSO. To enable SSO, you would need to upgrade to the Enterprise tier, as enabling SSO automatically enables audit logging for the account, which is an Enterprise-tier feature (see `pricing-tiers.md`). When SSO is enabled on the Enterprise tier, audit logs are also automatically enabled (see `sso-saml.md`).",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The Pro tier does not include SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pricing-tiers-0",
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "To enable SSO, you would need to upgrade to the Enterprise tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "When SSO is enabled on the Enterprise tier, audit logs are also automatically enabled.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "audit-logs-0",
+          "sso-saml-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides information about the Pro tier not including Single Sign-On (SSO), and mentions that upgrading to the Enterprise tier would be necessary for enabling SSO. It also states what happens when SSO is enabled, i.e., automatically enabling audit logging on the Enterprise tier.",
+    "context_utilization": 0.6,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q15",
+    "question": "If I'm on the Pro tier, how long is my data retained, and how does a GDPR deletion request affect that retention period?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "On the Pro tier, data is retained for 90 days. However, a GDPR data subject deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier.",
+    "relevant_chunk_ids": [
+      "data-retention-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieved_chunk_ids": [
+      "data-retention-0",
+      "data-processing-agreement-0",
+      "billing-invoicing-0",
+      "sso-saml-0",
+      "audit-logs-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "If you are on the Pro tier, your data is retained for 90 days. A GDPR deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Pro tier: 90 days",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "data-retention-0"
+        ]
+      },
+      {
+        "text": "GDPR deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "data-processing-agreement-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided does not directly address the question asked about how long data is retained on the Pro tier or how a GDPR deletion request affects this retention period. The given information focuses more on what happens after a deletion request, rather than the initial retention period for Pro users.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q16",
+    "question": "Walk me through what happens if I miss a payment on my Northwind Cloud invoice, from the missed payment to losing access to paid features.",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "If a payment fails, Northwind Cloud retries the charge up to 3 times over 7 days. If all attempts fail, there's an additional 7-day grace period with uninterrupted service but a payment warning banner. If payment still isn't received, the account is automatically downgraded to the Free tier, disabling tier-specific features like SSO, custom domains, and audit logs until payment is resolved.",
+    "relevant_chunk_ids": [
+      "billing-invoicing-0",
+      "pricing-tiers-0"
+    ],
+    "retrieved_chunk_ids": [
+      "billing-invoicing-0",
+      "webhooks-0",
+      "data-processing-agreement-0",
+      "custom-domains-0",
+      "monitoring-alerting-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "If you miss a payment on your Northwind Cloud invoice, service will continue uninterrupted for up to an additional 7 days during which a payment warning banner is shown in the dashboard. If the payment is still not received after this grace period, the account automatically downgrades to the Free tier. Any paid features such as Single Sign-On (SSO), custom domains, and audit logs are disabled until your account is manually upgraded again. Data retention continues to follow whatever window applied at the time it was ingested, per `data-retention.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Service will continue uninterrupted for up to an additional 7 days during which a payment warning banner is shown in the dashboard.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      },
+      {
+        "text": "If the payment is still not received after this grace period, the account automatically downgrades to the Free tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      },
+      {
+        "text": "Any paid features such as Single Sign-On (SSO), custom domains, and audit logs are disabled until your account is manually upgraded again.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0",
+          "custom-domains-0"
+        ]
+      },
+      {
+        "text": "Data retention continues to follow whatever window applied at the time it was ingested, per `data-retention.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The provided answer discusses what happens after a missed payment on a Northwind Cloud invoice, including grace periods and automatic downgrades to the Free tier. However, it does not cover the process from missing a single payment all the way through losing access to paid features. The question asks for the full journey from one missed payment to account deactivation of paid features.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q17",
+    "question": "For a SEV1 incident, how quickly must the status page be updated, and when is a postmortem due?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "For a SEV1 incident, the on-call engineer must post an initial status page update within 15 minutes of declaring the incident, with updates at least every 30 minutes thereafter. A written postmortem is required within 5 business days of resolution.",
+    "relevant_chunk_ids": [
+      "incident-response-0",
+      "postmortem-process-0"
+    ],
+    "retrieved_chunk_ids": [
+      "incident-response-0",
+      "postmortem-process-0",
+      "disaster-recovery-0",
+      "status-page-0",
+      "rollback-procedure-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "For a SEV1 incident, the status page must be updated within 15 minutes of declaring the incident. A postmortem is required within 5 business days of resolution for every SEV1 and SEV2 incident.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "For a SEV1 incident, the status page must be updated within 15 minutes of declaring the incident.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "incident-response-0"
+        ]
+      },
+      {
+        "text": "A postmortem is required within 5 business days of resolution for every SEV1 and SEV2 incident.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "postmortem-process-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific timeframes for updating the status page (within 15 minutes) and conducting a postmortem (within 5 business days), directly addressing the question about what is required for SEV1 incidents.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q18",
+    "question": "If I need to roll back a deployment that included a database migration, what do I need to be careful about?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "A code rollback does not automatically reverse a schema migration. Migrations must be designed to be backwards-compatible with the previous code version for at least one deploy cycle, so services with database migrations require additional care beyond the typical 3-5 minute rollback for stateless services.",
+    "relevant_chunk_ids": [
+      "rollback-procedure-0",
+      "database-migration-runbook-0"
+    ],
+    "retrieved_chunk_ids": [
+      "rollback-procedure-0",
+      "database-migration-runbook-0",
+      "audit-logs-0",
+      "pto-policy-0",
+      "secrets-management-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "When rolling back a deployment that included a database migration, you need to ensure that the migrations are backwards-compatible with the previous application version for at least one full deploy cycle. This means applying the schema migrations in two phases: an additive phase first, followed by a cleanup phase after the new code path has been running successfully in production for at least 7 days. Additionally, large backfills should be run as a separate background job to avoid replication lag that could trigger alerting thresholds. Before performing any migration expected to be destructive, confirm that a recent verified backup exists.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Migrations must be applied in two phases: an additive phase and a cleanup phase.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      },
+      {
+        "text": "Large backfills should be run as a separate background job to avoid replication lag that could trigger alerting thresholds.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      },
+      {
+        "text": "Before performing any migration expected to be destructive, confirm that a recent verified backup exists.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 4,
+    "answer_relevance_explanation": "The answer provided details specific steps and considerations for rolling back a deployment with database migrations. While it does not directly address the question of what needs to be careful about rolling back the deployment (which would have included more general advice), it provides comprehensive, detailed information that aligns well with best practices in such scenarios.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q19",
+    "question": "As a new fully-remote employee, what one-time equipment stipend do I get, and is that separate from my company laptop?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Remote employees receive a one-time $500 equipment stipend to set up a home office, which is separate from the standard company laptop that every employee is issued regardless of remote status.",
+    "relevant_chunk_ids": [
+      "remote-work-policy-0",
+      "equipment-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "onboarding-checklist-0",
+      "equipment-policy-0",
+      "benefits-overview-0",
+      "expense-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.9197207891481876,
+        "5": 0.9197207891481876,
+        "10": 0.9197207891481876
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "As a new fully-remote employee at Northwind Cloud, you receive a one-time $500 equipment stipend to set up your home office. This stipend is separate from the standard company laptop described in `equipment-policy.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "As a new fully-remote employee at Northwind Cloud, you receive a one-time $500 equipment stipend to set up your home office.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "remote-work-policy-0"
+        ]
+      },
+      {
+        "text": "This stipend is separate from the standard company laptop described in `equipment-policy.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "remote-work-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides information about a one-time equipment stipend for new fully-remote employees at Northwind Cloud, including its value and that it's separate from a company laptop. It directly addresses the question asked by specifying details related to both the stipend amount and its relationship to the company laptop policy.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q20",
+    "question": "What's the maximum PTO carryover into the next year, and does parental leave draw down the same PTO balance?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "The maximum PTO carryover is 5 days. Parental leave is a separate, additional benefit and does not draw down an employee's standard PTO balance.",
+    "relevant_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0",
+      "benefits-overview-0",
+      "data-export-0",
+      "billing-invoicing-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The maximum PTO carryover into the next year is 5 days. Parental leave does not draw down the standard PTO balance.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The maximum PTO carryover into the next year is 5 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "Parental leave does not draw down the standard PTO balance.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "parental-leave-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides information about the maximum PTO carryover and clarifies that parental leave does not affect the standard PTO balance, thus addressing both parts of the original question.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q21",
+    "question": "If I need to run more than the standard number of data exports in an hour, what's the limit and what are my options?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "The bulk data export endpoint is limited to 10 requests per hour per account on every tier, including Enterprise. Enterprise customers who need a higher quota for frequent large exports can request a custom quota increase through their account manager.",
+    "relevant_chunk_ids": [
+      "data-export-0",
+      "api-quotas-0"
+    ],
+    "retrieved_chunk_ids": [
+      "data-export-0",
+      "data-processing-agreement-0",
+      "api-quotas-0",
+      "database-migration-runbook-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.9197207891481876,
+        "5": 0.9197207891481876,
+        "10": 0.9197207891481876
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The standard quota for running the `/v2/exports` endpoint is 10 requests per hour per account on every tier, including Enterprise. If you need to run more than this number in an hour, your options include requesting a custom quota increase through your account manager, as described in `api-quotas.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The standard quota for running the `/v2/exports` endpoint is 10 requests per hour per account on every tier, including Enterprise.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "data-export-0"
+        ]
+      },
+      {
+        "text": "If you need to run more than the standard number of data exports in an hour, your options include requesting a custom quota increase through your account manager.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "api-quotas-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides information about the standard quota for running data exports and mentions options for exceeding that limit. It also directs users to a specific documentation file (`api-quotas.md`).",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q22",
+    "question": "How does the cadence of Northwind Cloud's quarterly access reviews compare to its disaster recovery drills?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "bm25",
+    "reference_answer": "Both happen on a quarterly cadence \u2014 access grants are reviewed quarterly by IT and department heads, and disaster recovery drills simulating a full regional failover are also conducted quarterly \u2014 though the two processes are independent of one another.",
+    "relevant_chunk_ids": [
+      "access-control-runbook-0",
+      "disaster-recovery-0"
+    ],
+    "retrieved_chunk_ids": [
+      "access-control-runbook-0",
+      "disaster-recovery-0",
+      "performance-reviews-0",
+      "incident-response-0",
+      "security-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud's quarterly access reviews by IT are coordinated with department heads for re-certification and can be revoked if not renewed, while their quarterly disaster recovery drills are conducted in a non-production environment simulating full regional failovers to validate targets of 4 hours RTO and 15 minutes RPO. The cadences are independent processes.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud's quarterly access reviews by IT are coordinated with department heads for re-certification and can be revoked if not renewed.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "access-control-runbook-0"
+        ]
+      },
+      {
+        "text": "Their quarterly disaster recovery drills are conducted in a non-production environment simulating full regional failovers to validate targets of 4 hours RTO and 15 minutes RPO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      },
+      {
+        "text": "The cadences are independent processes.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided information about the cadence (frequency) of Northwind Cloud's quarterly access reviews and disaster recovery drills, but did not compare these cadences. It described both processes separately and stated that they have independent cadences.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q23",
+    "question": "What is Northwind Cloud's policy on bringing pets or dogs to the office?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "bm25",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated policy on pets or dogs in the office.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "data-processing-agreement-0",
+      "sso-saml-0",
+      "code-of-conduct-0",
+      "data-export-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer correctly states that it does not have information about Northwind Cloud's pet/office policy, which aligns with a refusal to provide unasked-for information and is relevant as the question cannot be answered from the given context.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q24",
+    "question": "What is the bonus amount for an employee who refers a successful new hire?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "bm25",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated employee referral bonus program.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "data-export-0",
+      "benefits-overview-0",
+      "data-processing-agreement-0",
+      "equipment-policy-0",
+      "performance-reviews-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 1,
+    "answer_relevance_explanation": "The answer correctly indicates that it does not have the specific information requested. The question asks about a bonus amount for employees who refer successful hires, but the given response lacks relevant details and directly states there is no information available.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q25",
+    "question": "What uptime percentage does Northwind Cloud guarantee in its SLA (e.g., 99.9%)?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "bm25",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. While there is a status page and support response-time SLAs, no specific uptime percentage guarantee is documented.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "customer-support-sla-0",
+      "api-versioning-0",
+      "sdks-0",
+      "security-policy-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer correctly states it doesn't have the specific information requested, which aligns with a correct refusal to provide data not available within the given context.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q26",
+    "question": "Does Northwind Cloud have a policy about vegetarian or vegan snacks in the office kitchen?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "bm25",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated office kitchen or snack policy.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "onboarding-checklist-0",
+      "data-processing-agreement-0",
+      "sdks-0",
+      "sso-saml-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 1,
+    "answer_relevance_explanation": "The answer does not address the specific question asked because it states 'I don't have information about that in the provided context,' which directly relates to whether Northwind Cloud has a policy regarding vegetarian or vegan snacks. It could be relevant if more information was needed but, as is, it fails to provide any insight into the existence of such a policy.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q27",
+    "question": "What is Northwind Cloud's carbon offset or sustainability program?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "bm25",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated carbon offset or sustainability program.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "data-processing-agreement-0",
+      "data-export-0",
+      "sso-saml-0",
+      "remote-work-policy-0",
+      "status-page-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses the question by stating it cannot find relevant information within the given context, which is a correct refusal to answering the specific query.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q28",
+    "question": "What signing bonus do new hires receive at Northwind Cloud?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "bm25",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. The onboarding checklist describes day-one and first-two-weeks tasks but does not mention a signing bonus.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "onboarding-checklist-0",
+      "performance-reviews-0",
+      "data-export-0",
+      "authentication-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses the question by stating that it is unable to provide specific details due to a lack of relevant information within the given context. This response does not evade the question but rather acknowledges its inability to provide an accurate or relevant answer.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q01",
+    "question": "What is Northwind Cloud's PTO accrual rate, and is there a waiting period before it starts?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Employees accrue 20 days of PTO per year, at a rate of 1.67 days per month, starting from their very first day of employment with no waiting period.",
+    "relevant_chunk_ids": [
+      "pto-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "pricing-tiers-0",
+      "billing-invoicing-0",
+      "data-processing-agreement-0",
+      "performance-reviews-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud employees accrue paid time off (PTO) at a rate of 1.67 days per month starting from the first day of employment with no waiting period before accrual begins.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud employees accrue paid time off (PTO) at a rate of 1.67 days per month",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "there is no waiting period before the accrual begins for Northwind Cloud employees'",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided contains information about the PTO accrual rate and whether there is a waiting period for Northwind Cloud, which directly addresses both aspects of the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q02",
+    "question": "What is the maximum number of unused PTO days an employee can carry over into the next year, and what's the deadline to use them?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Employees may carry over up to 5 unused PTO days into the following year, and those carried-over days must be used by March 31 of that year or they are forfeited.",
+    "relevant_chunk_ids": [
+      "pto-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "data-retention-0",
+      "parental-leave-0",
+      "onboarding-checklist-0",
+      "access-control-runbook-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The maximum number of unused PTO days an employee can carry over into the next year is 5. Employees must use any carried-over PTO by March 31 of the following year or they will be forfeited.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The maximum number of unused PTO days an employee can carry over into the next year is 5.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "Employees must use any carried-over PTO by March 31 of the following year or they will be forfeited.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides information about how many unused Paid Time Off (PTO) days an employee can carry over into the next year and when those days need to be used, which directly addresses the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q03",
+    "question": "How often is the sandbox environment's database reset?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "The sandbox database is reset every Sunday at 00:00 UTC, wiping all test data created during the week.",
+    "relevant_chunk_ids": [
+      "sandbox-environment-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sandbox-environment-0",
+      "database-migration-runbook-0",
+      "rollback-procedure-0",
+      "data-retention-0",
+      "audit-logs-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The sandbox environment's database is reset every Sunday at 00:00 UTC.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The sandbox environment's database is reset every Sunday at 00:00 UTC.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly addresses how frequently the sandbox environment's database is reset, specifying a particular day and time (every Sunday at 00:00 UTC). While this might not cover all aspects of the question or provide context about why this schedule was chosen, it does directly respond to the frequency aspect of the inquiry.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q04",
+    "question": "How many API calls per month are included in the Free pricing tier?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "The Free tier includes 1,000 API calls per month.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pricing-tiers-0",
+      "rate-limits-0",
+      "billing-invoicing-0",
+      "api-quotas-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The Free pricing tier includes 1,000 API calls per month.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Free tier includes 1,000 API calls per month",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pricing-tiers-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the question by providing a specific number (1,000 API calls) for the Free pricing tier's monthly limit. Although this is factual information about API call limits in the Free plan, it does not provide details such as where to find this information or additional context.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q05",
+    "question": "What are Northwind Cloud's Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for disaster recovery?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "The disaster recovery plan targets an RTO of 4 hours and an RPO of 15 minutes for all customer-facing production systems.",
+    "relevant_chunk_ids": [
+      "disaster-recovery-0"
+    ],
+    "retrieved_chunk_ids": [
+      "disaster-recovery-0",
+      "customer-support-sla-0",
+      "data-processing-agreement-0",
+      "parental-leave-0",
+      "pto-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud's disaster recovery plan targets a Recovery Time Objective (RTO) of 4 hours and a Recovery Point Objective (RPO) of 15 minutes for all customer-facing production systems.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud's disaster recovery plan targets a Recovery Time Objective (RTO) of 4 hours.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud's disaster recovery plan targets a Recovery Point Objective (RPO) of 15 minutes for all customer-facing production systems.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly addresses the specific RTO (Recovery Time Objective) and RPO (Recovery Point Objective) for Northwind Cloud's disaster recovery plan, which is what the question asked about. The information given matches exactly with the details requested.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q06",
+    "question": "How much is the weekly stipend for being primary on-call, and what other compensation do on-call engineers receive?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Primary on-call engineers receive a $200 stipend per week (secondary on-call receives $100 per week), plus one floating comp day to be used within 30 days of the rotation ending.",
+    "relevant_chunk_ids": [
+      "on-call-rotation-0"
+    ],
+    "retrieved_chunk_ids": [
+      "on-call-rotation-0",
+      "pricing-tiers-0",
+      "benefits-overview-0",
+      "remote-work-policy-0",
+      "incident-response-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The weekly stipend for being primary on-call is $200. On-call engineers also receive one floating comp day to be used within 30 days of the rotation ending.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "$200 is the weekly stipend for being primary on-call.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "on-call-rotation-0"
+        ]
+      },
+      {
+        "text": "On-call engineers also receive one floating comp day to be used within 30 days of the rotation ending.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "on-call-rotation-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific details about a weekly stipend and a compensation benefit (a floating comp day) for being primary on-call, directly addressing the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q07",
+    "question": "What is Northwind Cloud's 401(k) matching policy?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Northwind Cloud offers a 401(k) with a 4% match, dollar-for-dollar, vested immediately with no vesting cliff.",
+    "relevant_chunk_ids": [
+      "benefits-overview-0"
+    ],
+    "retrieved_chunk_ids": [
+      "benefits-overview-0",
+      "remote-work-policy-0",
+      "parental-leave-0",
+      "pricing-tiers-0",
+      "authentication-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud offers a 401(k) retirement plan with a 4% match, dollar-for-dollar, vested immediately with no cliff. The match belongs to the employee from day one and is available at any time for enrollment, not just during a fixed open-enrollment window. Employees do not need department-head approval regardless of the amount up to $1,000 annually, and this professional development budget is separate from the general expense reimbursement process.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud offers a 401(k) retirement plan with a 4% match, dollar-for-dollar, vested immediately with no cliff.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      },
+      {
+        "text": "The match belongs to the employee from day one and is available at any time for enrollment, not just during a fixed open-enrollment window.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      },
+      {
+        "text": "Employees do not need department-head approval regardless of the amount up to $1,000 annually, and this professional development budget is separate from the general expense reimbursement process.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provided information about Northwind Cloud's 401(k) matching policy, including the match percentage, availability of the benefit, vesting conditions, and enrollment options. However, it does not directly address whether Northwind Cloud has a 401(k) plan or what their specific matching policy is (i.e., 4% match). The answer assumes knowledge about these points rather than explicitly stating them.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q08",
+    "question": "How many times does Northwind Cloud retry a failed webhook delivery, and on what schedule?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Northwind Cloud retries a failed webhook delivery 5 times, on a backoff schedule of 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours after the initial attempt.",
+    "relevant_chunk_ids": [
+      "webhooks-0"
+    ],
+    "retrieved_chunk_ids": [
+      "webhooks-0",
+      "status-page-0",
+      "sandbox-environment-0",
+      "billing-invoicing-0",
+      "monitoring-alerting-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud retries a failed webhook delivery up to 5 times with a backoff schedule of:\n- 1 minute after the first failure attempt\n- 5 minutes after the second\n- 15 minutes after the third\n- 1 hour after the fourth\n- 6 hours after the fifth",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud retries a failed webhook delivery up to 5 times",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      },
+      {
+        "text": "The backoff schedule for webhook retries is: 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided details about how many times Northwind Cloud retries a failed webhook delivery and on what schedule. However, it does not address the specific question of how many times it retries (up to 5 times) or mention anything about a cloud context. The answer focuses more on the frequency and timing of retries rather than addressing the user's query about Northwind Cloud specifically.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q09",
+    "question": "What laptop do new employees receive, and how often is it refreshed?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "New employees are issued a MacBook Pro 14\" laptop, which is refreshed every 3 years (or sooner if hardware fails beyond economical repair).",
+    "relevant_chunk_ids": [
+      "equipment-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "equipment-policy-0",
+      "onboarding-checklist-0",
+      "remote-work-policy-0",
+      "security-policy-0",
+      "pto-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "New employees receive a standard-configuration MacBook Pro 14\" laptop, which is refreshed every 3 years or sooner if hardware fails.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "New employees receive a standard-configuration MacBook Pro 14\" laptop.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "equipment-policy-0"
+        ]
+      },
+      {
+        "text": "The laptop is refreshed every 3 years or sooner if hardware fails and is beyond economical repair.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "equipment-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided information about what laptop new employees receive (a MacBook Pro 14\" with standard configuration) and how often it is refreshed (every 3 years or earlier if hardware fails). Although the specifics given are not exactly aligned with typical company practices, the content does address both aspects of the question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q10",
+    "question": "When is Northwind Cloud's weekly deploy freeze, and is there any exception to it?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "There is a deploy freeze every Friday after 2:00 PM through the following Monday morning, except for critical hotfixes approved by the on-call engineering lead.",
+    "relevant_chunk_ids": [
+      "deployment-process-0"
+    ],
+    "retrieved_chunk_ids": [
+      "deployment-process-0",
+      "api-versioning-0",
+      "status-page-0",
+      "sandbox-environment-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud observes a deploy freeze every Friday after 2:00 PM in the primary engineering time zone, through the following Monday morning. The exception to this is critical hotfixes approved by the on-call engineering lead as part of the incident response process described in `incident-response.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud observes a deploy freeze every Friday after 2:00 PM in the primary engineering time zone, through the following Monday morning.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "deployment-process-0"
+        ]
+      },
+      {
+        "text": "The exception to this is critical hotfixes approved by the on-call engineering lead as part of the incident response process described in `incident-response.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "deployment-process-0",
+          "incident-response-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 4,
+    "answer_relevance_explanation": "The answer provided does address the question asked about Northwind Cloud's weekly deploy freeze, specifically mentioning when it occurs (every Friday after 2:00 PM) and noting that there are exceptions for critical hotfixes approved by the on-call engineering lead. However, the answer also includes additional information not directly related to the main question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q11",
+    "question": "Which identity providers does Northwind Cloud support for SSO?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Northwind Cloud supports Okta, Azure AD, and Google Workspace as identity providers for SAML-based SSO.",
+    "relevant_chunk_ids": [
+      "sso-saml-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sso-saml-0",
+      "pricing-tiers-0",
+      "authentication-0",
+      "remote-work-policy-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud supports Okta, Azure AD, and Google Workspace as identity providers for Single sign-on (SSO).",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud supports Okta as an identity provider for SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud supports Azure AD as an identity provider for SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud supports Google Workspace as an identity provider for SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly responds to the question by listing the identity providers that Northwind Cloud supports for SSO. The information given is relevant and addresses the specific query.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q12",
+    "question": "What is the minimum password length required by Northwind Cloud's security policy, and does the company force periodic password rotation?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Passwords must be at least 14 characters. Northwind Cloud does not enforce periodic forced password rotation; instead, passwords are checked against known-breach databases and must be changed immediately if a match is found.",
+    "relevant_chunk_ids": [
+      "security-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "security-policy-0",
+      "sso-saml-0",
+      "authentication-0",
+      "pricing-tiers-0",
+      "remote-work-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The minimum password length required by Northwind Cloud's security policy is 14 characters. Periodic password rotation is not enforced; instead, passwords are checked against known-breach databases and must be changed immediately if a match is found.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The minimum password length required by Northwind Cloud's security policy is 14 characters.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "password-policy-0"
+        ]
+      },
+      {
+        "text": "Periodic password rotation is not enforced; instead, passwords are checked against known-breach databases and must be changed immediately if a match is found.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "password-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided does not address the specific question asked about periodic password rotation or the minimum password length requirement by Northwind Cloud's security policy. Instead, it only discusses one aspect of their password policies.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q13",
+    "question": "If I'm on the Pro tier and my application starts hitting 429 errors, what's my rate limit and what retry strategy should I implement?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "The Pro tier is rate limited to 1,500 requests per minute. When you hit a 429, you should implement exponential backoff with jitter, starting at a 1-second delay and doubling on each subsequent 429, capped at 60 seconds, rather than retrying immediately in a tight loop.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0",
+      "rate-limits-0"
+    ],
+    "retrieved_chunk_ids": [
+      "rate-limits-0",
+      "monitoring-alerting-0",
+      "api-quotas-0",
+      "error-codes-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "If you're on the Pro tier, your general request budget rate limit is set at 300 requests per minute. When your application starts encountering 429 Too Many Requests errors, you should implement an exponential backoff with jitter: start with a 1-second delay and double it on each subsequent 429 until the retry interval reaches 60 seconds. This strategy helps avoid getting blocked by temporary IP-level issues while still managing to make reasonable progress in your retries.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Your general request budget rate limit is set at 300 requests per minute.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "rate-limits-0"
+        ]
+      },
+      {
+        "text": "When your application starts encountering 429 Too Many Requests errors, you should implement an exponential backoff with jitter: start with a 1-second delay and double it on each subsequent 429 until the retry interval reaches 60 seconds.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "rate-limits-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific information about rate limits for the Pro tier and a recommended retry strategy when hitting 429 errors. While it does not directly address the exact rate limit of 300 requests per minute mentioned in the question, it offers valuable advice on implementing an appropriate retry strategy which addresses the core issue of dealing with 429 errors. The answer also touches upon the need to avoid getting blocked by temporary issues.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q14",
+    "question": "Does the Pro tier include SSO? If not, what tier do I need, and what happens automatically when SSO is enabled?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "No, SSO/SAML is not included on the Pro tier \u2014 it's an Enterprise-only feature. Enabling SSO automatically enables audit logging for the account, and audit logs cannot be disabled while SSO remains active.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0",
+      "sso-saml-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sso-saml-0",
+      "customer-support-sla-0",
+      "pto-policy-0",
+      "data-processing-agreement-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.8503449055347546,
+        "10": 0.8503449055347546
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The Pro tier does not include SSO. When enabling SSO at any paid tier (Starter, Pro, or Enterprise), it automatically enables audit logging for the account. Therefore, you would need to upgrade from the current tier to either the Pro or Enterprise tier, and then enable SSO. Once enabled, audit logs will be automatically set up and available in your account.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The Pro tier does not include SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "You would need to upgrade from the current tier to either the Pro or Enterprise tier, and then enable SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pricing-tiers-0",
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "Once enabled, audit logs will be automatically set up and available in your account.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "audit-logs.md"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provides information about enabling SSO at different tiers (Starter, Pro, and Enterprise) and explains that audit logging is automatically enabled when SSO is activated regardless of the tier. However, it does not directly address whether the Pro tier includes SSO or what happens if you need to upgrade from a non-Pro tier.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q15",
+    "question": "If I'm on the Pro tier, how long is my data retained, and how does a GDPR deletion request affect that retention period?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "On the Pro tier, data is retained for 90 days. However, a GDPR data subject deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier.",
+    "relevant_chunk_ids": [
+      "data-retention-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieved_chunk_ids": [
+      "data-retention-0",
+      "data-processing-agreement-0",
+      "audit-logs-0",
+      "pto-policy-0",
+      "data-export-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "For customers on the Pro tier, raw event and request data are retained for 90 days. After this period elapses, such data is permanently deleted from primary storage. \n\nA GDPR (General Data Protection Regulation) deletion request takes precedence over the standard retention window described in `data-retention.md`. Therefore, if a customer requests the deletion of their data under GDPR within 30 days as per the policy, the data will be processed and deleted immediately, regardless of the Pro tier's 90-day retention period.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "For customers on the Pro tier, raw event and request data are retained for 90 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "data-retention-0"
+        ]
+      },
+      {
+        "text": "A GDPR deletion request takes precedence over the standard retention window described in `data-retention.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "audit-logs-0",
+          "data-processing-agreement-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided does not directly address the specific questions asked in the question. The answer describes how raw event and request data are retained for 90 days on the Pro tier, but it introduces GDPR deletion requests which were not a part of the original question. It also mentions processing of GDPR deletion requests taking precedence over retention periods, which is relevant to GDPR and not directly related to the 90-day retention period.",
+    "context_utilization": 0.6,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q16",
+    "question": "Walk me through what happens if I miss a payment on my Northwind Cloud invoice, from the missed payment to losing access to paid features.",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "If a payment fails, Northwind Cloud retries the charge up to 3 times over 7 days. If all attempts fail, there's an additional 7-day grace period with uninterrupted service but a payment warning banner. If payment still isn't received, the account is automatically downgraded to the Free tier, disabling tier-specific features like SSO, custom domains, and audit logs until payment is resolved.",
+    "relevant_chunk_ids": [
+      "billing-invoicing-0",
+      "pricing-tiers-0"
+    ],
+    "retrieved_chunk_ids": [
+      "billing-invoicing-0",
+      "customer-support-sla-0",
+      "pricing-tiers-0",
+      "custom-domains-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.9197207891481876,
+        "5": 0.9197207891481876,
+        "10": 0.9197207891481876
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "If you miss a payment on your Northwind Cloud invoice, payment will be attempted up to 3 times over 7 days via retries. If all attempts fail within this period, your account enters a grace period of an additional 7 days where service continues uninterrupted but a payment warning banner is shown in the dashboard.\n\nShould the missed payment issue persist after the grace period ends (14 days total from the original missed payment), your account will be automatically downgraded to the Free tier. This downgrade disables any paid features, including SSO, custom domains, and audit logs, until you resolve the non-payment and manually upgrade back to a higher-tier plan.\n\nIn summary, missing payments may lead to service being suspended due to grace period, followed by automatic downgrade if payment is not resolved within 14 days.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Payment will be attempted up to 3 times over 7 days via retries.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      },
+      {
+        "text": "If all attempts fail within the grace period, your account enters a grace period of an additional 7 days where service continues uninterrupted but a payment warning banner is shown in the dashboard.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      },
+      {
+        "text": "If the missed payment issue persists after the grace period, your account will be automatically downgraded to the Free tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      },
+      {
+        "text": "The automatic downgrade disables any paid features, including SSO, custom domains, and audit logs.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The provided answer does not address the question asked about what happens from a missed payment on a Northwind Cloud invoice through to losing access to paid features. Instead, it describes the process of retries for missing payments and the automatic downgrade process after the grace period. The relevant information sought was not included in the response.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q17",
+    "question": "For a SEV1 incident, how quickly must the status page be updated, and when is a postmortem due?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "For a SEV1 incident, the on-call engineer must post an initial status page update within 15 minutes of declaring the incident, with updates at least every 30 minutes thereafter. A written postmortem is required within 5 business days of resolution.",
+    "relevant_chunk_ids": [
+      "incident-response-0",
+      "postmortem-process-0"
+    ],
+    "retrieved_chunk_ids": [
+      "postmortem-process-0",
+      "incident-response-0",
+      "status-page-0",
+      "rollback-procedure-0",
+      "disaster-recovery-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "For a SEV1 incident, the status page must be updated within 15 minutes of declaring the incident. A postmortem is required within 5 business days of resolution for every SEV1 and SEV2 incident.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "For a SEV1 incident, the status page must be updated within 15 minutes of declaring the incident.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "incident-response-0"
+        ]
+      },
+      {
+        "text": "A postmortem is required within 5 business days of resolution for every SEV1 and SEV2 incident.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "postmortem-process-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the two main points asked: how quickly the status page should be updated (within 15 minutes) and when a postmortem is due (within 5 business days).",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q18",
+    "question": "If I need to roll back a deployment that included a database migration, what do I need to be careful about?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "A code rollback does not automatically reverse a schema migration. Migrations must be designed to be backwards-compatible with the previous code version for at least one deploy cycle, so services with database migrations require additional care beyond the typical 3-5 minute rollback for stateless services.",
+    "relevant_chunk_ids": [
+      "rollback-procedure-0",
+      "database-migration-runbook-0"
+    ],
+    "retrieved_chunk_ids": [
+      "rollback-procedure-0",
+      "database-migration-runbook-0",
+      "deployment-process-0",
+      "disaster-recovery-0",
+      "monitoring-alerting-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "When rolling back a deployment that included a database migration at Northwind Cloud, you need to ensure that all schema migrations are backwards-compatible with the previous application version for at least one full deploy cycle. This means applying migrations in two phases: an additive phase (deploying and verifying new columns, tables, or indexes, all nullable or defaulted) followed by a cleanup phase (dropping old columns). Additionally, large backfills should be run as a separate, throttled background job to avoid replication lag that could trigger alerting thresholds.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Schema migrations must be backwards-compatible with the previous application version for at least one full deploy cycle.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      },
+      {
+        "text": "Large backfills should be run as a separate, throttled background job to avoid replication lag that could trigger alerting thresholds.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided does not directly address the core concern of what needs to be careful about when rolling back a deployment including a database migration. Instead, it focuses on the technical steps and considerations for a specific scenario (Northwind Cloud), which is not aligned with the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q19",
+    "question": "As a new fully-remote employee, what one-time equipment stipend do I get, and is that separate from my company laptop?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Remote employees receive a one-time $500 equipment stipend to set up a home office, which is separate from the standard company laptop that every employee is issued regardless of remote status.",
+    "relevant_chunk_ids": [
+      "remote-work-policy-0",
+      "equipment-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "equipment-policy-0",
+      "onboarding-checklist-0",
+      "expense-policy-0",
+      "benefits-overview-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "As a new fully-remote employee, you receive a one-time $500 equipment stipend to set up a home office. This stipend is separate from the standard company laptop issued on your start date. The stipend can be used for items like desk, chair, monitor, and other personal office setup needs.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "New employees receive a one-time $500 equipment stipend to set up a home office.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "remote-work-policy-0"
+        ]
+      },
+      {
+        "text": "This stipend is separate from the standard company laptop issued on their start date.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "remote-work-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the two main points asked: it mentions a one-time $500 equipment stipend provided to new fully-remote employees to set up a home office and clarifies that this is separate from their company laptop. The response provides specific information about what items can be covered by the stipend.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q20",
+    "question": "What's the maximum PTO carryover into the next year, and does parental leave draw down the same PTO balance?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "The maximum PTO carryover is 5 days. Parental leave is a separate, additional benefit and does not draw down an employee's standard PTO balance.",
+    "relevant_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0",
+      "benefits-overview-0",
+      "data-retention-0",
+      "access-control-runbook-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The maximum PTO that can be carried over into the following year is 5 days. Parental leave does not draw down an employee's PTO balance; it is a distinct benefit from standard PTO.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The maximum PTO that can be carried over into the following year is 5 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "Parental leave does not draw down an employee's PTO balance; it is a distinct benefit from standard PTO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "parental-leave-0",
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly addresses the two questions asked about maximum carryover of Paid Time Off (PTO) into the next year and whether parental leave uses up the same PTO balance as other types of leave. However, it does not provide specific numbers or details on how much PTO can be carried over in a particular company policy.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q21",
+    "question": "If I need to run more than the standard number of data exports in an hour, what's the limit and what are my options?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "The bulk data export endpoint is limited to 10 requests per hour per account on every tier, including Enterprise. Enterprise customers who need a higher quota for frequent large exports can request a custom quota increase through their account manager.",
+    "relevant_chunk_ids": [
+      "data-export-0",
+      "api-quotas-0"
+    ],
+    "retrieved_chunk_ids": [
+      "api-quotas-0",
+      "data-export-0",
+      "rate-limits-0",
+      "data-processing-agreement-0",
+      "monitoring-alerting-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The per-endpoint quota for bulk data export via the `/v2/exports` endpoint is limited to 10 requests per hour per account on every tier including Enterprise. For a higher number of exports, Enterprise customers who need it can request a custom quota increase through their account manager; this is negotiated separately from the general custom rate limit.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The per-endpoint quota for bulk data export via the `/v2/exports` endpoint is limited to 10 requests per hour per account on every tier including Enterprise.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "api-quotas-0"
+        ]
+      },
+      {
+        "text": "Enterprise customers who need a higher per-endpoint quota for bulk data exports can request a custom quota increase through their account manager; this is negotiated separately from the general custom rate limit.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "api-quotas-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the question by providing specific information about the per-endpoint quota for bulk data export and mentioning options for higher numbers of exports if needed, which are custom quota increases through an account manager. The response aligns with the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q22",
+    "question": "How does the cadence of Northwind Cloud's quarterly access reviews compare to its disaster recovery drills?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "dense",
+    "reference_answer": "Both happen on a quarterly cadence \u2014 access grants are reviewed quarterly by IT and department heads, and disaster recovery drills simulating a full regional failover are also conducted quarterly \u2014 though the two processes are independent of one another.",
+    "relevant_chunk_ids": [
+      "access-control-runbook-0",
+      "disaster-recovery-0"
+    ],
+    "retrieved_chunk_ids": [
+      "disaster-recovery-0",
+      "performance-reviews-0",
+      "status-page-0",
+      "monitoring-alerting-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud's disaster recovery drills are conducted quarterly, simulating a full regional failover in non-production environments to validate targets. The cadence of their quarterly disaster recovery drills matches that of their formal performance reviews which also occur twice a year: in January and July. However, unlike the drills, access reviews for employees are not specified by this context; they may be conducted differently or at irregular intervals based on individual need or contract terms.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud's disaster recovery drills are conducted quarterly.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud's formal performance reviews also occur twice a year: in January and July.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "performance-reviews-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 1,
+    "answer_relevance_explanation": "The answer provided does not directly address how the cadence of Northwind Cloud's quarterly access reviews compares to its disaster recovery drills. Instead, it provides information about the frequency and purpose of the disaster recovery drills. The answer also includes incorrect information about the quarterly performance reviews' purpose, which is unrelated to the question asked.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q23",
+    "question": "What is Northwind Cloud's policy on bringing pets or dogs to the office?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "dense",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated policy on pets or dogs in the office.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "code-of-conduct-0",
+      "parental-leave-0",
+      "webhooks-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' correctly indicates that there isn't enough information available within the given text to answer the question. This is a relevant and accurate response as it directly addresses the inability to provide specific information, even though it does not address the actual query.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q24",
+    "question": "What is the bonus amount for an employee who refers a successful new hire?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "dense",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated employee referral bonus program.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "performance-reviews-0",
+      "benefits-overview-0",
+      "onboarding-checklist-0",
+      "pto-policy-0",
+      "remote-work-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses the question by stating it does not know the specific bonus amount for an employee who refers a successful new hire based on the given context.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q25",
+    "question": "What uptime percentage does Northwind Cloud guarantee in its SLA (e.g., 99.9%)?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "dense",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. While there is a status page and support response-time SLAs, no specific uptime percentage guarantee is documented.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "pricing-tiers-0",
+      "customer-support-sla-0",
+      "billing-invoicing-0",
+      "monitoring-alerting-0",
+      "rate-limits-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The support response-time commitments are tied to pricing tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "customer-support-sla-0"
+        ]
+      },
+      {
+        "text": "Starter tier has an email support with a 24-hour first-response SLA during business days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "customer-support-sla-0"
+        ]
+      },
+      {
+        "text": "Pro tier has live chat support, 4-hour first-response SLA, and is available 7 days a week.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "customer-support-sla-0"
+        ]
+      },
+      {
+        "text": "Enterprise tier has dedicated support with a 1-hour response SLA, 24/7 availability, plus a named customer success manager.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "customer-support-sla-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer correctly states that it doesn't have the specific information needed to address the question, which means it's a correct refusal and relevant to the context.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q26",
+    "question": "Does Northwind Cloud have a policy about vegetarian or vegan snacks in the office kitchen?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "dense",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated office kitchen or snack policy.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "sdks-0",
+      "code-of-conduct-0",
+      "authentication-0",
+      "pricing-tiers-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer is relevant because it correctly states that there isn't enough information available to provide an answer. The question asked specifically about Northwind Cloud's policy regarding vegetarian or vegan snacks, but no such information was given in the context.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q27",
+    "question": "What is Northwind Cloud's carbon offset or sustainability program?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "dense",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated carbon offset or sustainability program.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "api-versioning-0",
+      "data-processing-agreement-0",
+      "pricing-tiers-0",
+      "billing-invoicing-0",
+      "remote-work-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses what was asked, which appears to be specific information (likely a program) about Northwind Cloud's carbon offset or sustainability efforts. Although it states there is no available information in the given context, this is still relevant as it clearly communicates that the question cannot be answered based on the existing data.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q28",
+    "question": "What signing bonus do new hires receive at Northwind Cloud?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "dense",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. The onboarding checklist describes day-one and first-two-weeks tasks but does not mention a signing bonus.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "performance-reviews-0",
+      "remote-work-policy-0",
+      "benefits-overview-0",
+      "pricing-tiers-0",
+      "authentication-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses a query related to signing bonuses for new hires at Northwind Cloud, even though it acknowledges a lack of specific data. The question could not be answered based on the given context, so providing this response is relevant.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q01",
+    "question": "What is Northwind Cloud's PTO accrual rate, and is there a waiting period before it starts?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Employees accrue 20 days of PTO per year, at a rate of 1.67 days per month, starting from their very first day of employment with no waiting period.",
+    "relevant_chunk_ids": [
+      "pto-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "data-processing-agreement-0",
+      "parental-leave-0",
+      "benefits-overview-0",
+      "billing-invoicing-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud employees accrue paid time off (PTO) at a rate of 20 days per year, accrued monthly at a rate of 1.67 days per month starting from the first day of employment; there is no waiting period before accrual begins.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud employees accrue paid time off (PTO) at a rate of 20 days per year, accrued monthly at a rate of 1.67 days per month starting from the first day of employment",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "there is no waiting period before accrual begins",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides information about Northwind Cloud's PTO accrual rate and whether there is a waiting period, directly addressing both aspects of the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q02",
+    "question": "What is the maximum number of unused PTO days an employee can carry over into the next year, and what's the deadline to use them?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Employees may carry over up to 5 unused PTO days into the following year, and those carried-over days must be used by March 31 of that year or they are forfeited.",
+    "relevant_chunk_ids": [
+      "pto-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0",
+      "benefits-overview-0",
+      "data-processing-agreement-0",
+      "expense-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The maximum number of unused PTO days an employee can carry over into the next year is 5. They must be used by March 31 of the following year or they are forfeited.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The maximum number of unused PTO days an employee can carry over into the next year is 5.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "They must be used by March 31 of the following year or they are forfeited.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific information about the maximum number of unused PTO days that an employee can carry over into the next year and the deadline to use them. However, it does not address any other aspects such as what constitutes 'PTO' or whether there are any exceptions or variations in different organizations.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q03",
+    "question": "How often is the sandbox environment's database reset?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "The sandbox database is reset every Sunday at 00:00 UTC, wiping all test data created during the week.",
+    "relevant_chunk_ids": [
+      "sandbox-environment-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sandbox-environment-0",
+      "rollback-procedure-0",
+      "data-retention-0",
+      "monitoring-alerting-0",
+      "disaster-recovery-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The sandbox database is reset every Sunday at 00:00 UTC.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The sandbox database is reset every Sunday at 00:00 UTC.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sandbox-environment-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 4,
+    "answer_relevance_explanation": "The answer provides specific information about when the sandbox environment's database is reset (every Sunday at 00:00 UTC). While it addresses a part of what was asked (the frequency and timing), it does not cover any other aspects of the question such as how often or why it happens, who is responsible for resetting, etc. The answer focuses solely on when the reset occurs.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q04",
+    "question": "How many API calls per month are included in the Free pricing tier?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "The Free tier includes 1,000 API calls per month.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pricing-tiers-0",
+      "billing-invoicing-0",
+      "rate-limits-0",
+      "data-retention-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The Free pricing tier includes 1,000 API calls per month.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The Free pricing tier includes 1,000 API calls per month.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pricing-tiers-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the question by providing the number of API calls per month that are included in the Free pricing tier, which is exactly what was asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q05",
+    "question": "What are Northwind Cloud's Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for disaster recovery?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "The disaster recovery plan targets an RTO of 4 hours and an RPO of 15 minutes for all customer-facing production systems.",
+    "relevant_chunk_ids": [
+      "disaster-recovery-0"
+    ],
+    "retrieved_chunk_ids": [
+      "disaster-recovery-0",
+      "data-processing-agreement-0",
+      "access-control-runbook-0",
+      "incident-response-0",
+      "postmortem-process-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud's disaster recovery plan targets a Recovery Time Objective (RTO) of 4 hours and a Recovery Point Objective (RPO) of 15 minutes for all customer-facing production systems.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud's disaster recovery plan targets a Recovery Time Objective (RTO) of 4 hours.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud's disaster recovery plan targets a Recovery Point Objective (RPO) of 15 minutes for all customer-facing production systems.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "disaster-recovery-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided gives specific details about the RTO and RPO for Northwind Cloud's disaster recovery plan, addressing both aspects of the question as asked. The information given is relevant to understanding their disaster recovery capabilities.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q06",
+    "question": "How much is the weekly stipend for being primary on-call, and what other compensation do on-call engineers receive?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Primary on-call engineers receive a $200 stipend per week (secondary on-call receives $100 per week), plus one floating comp day to be used within 30 days of the rotation ending.",
+    "relevant_chunk_ids": [
+      "on-call-rotation-0"
+    ],
+    "retrieved_chunk_ids": [
+      "on-call-rotation-0",
+      "incident-response-0",
+      "benefits-overview-0",
+      "remote-work-policy-0",
+      "performance-reviews-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The weekly stipend for being primary on-call is $200. On-call engineers also receive an additional $100 as a secondary on-call rotation per week, along with one floating comp day to be used within 30 days of the rotation ending.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "$200 is the stipend for being primary on-call.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "on-call-rotation-0"
+        ]
+      },
+      {
+        "text": "On-call engineers receive an additional $100 as a secondary on-call rotation per week.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "on-call-rotation-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific information about the weekly stipend for primary on-call and additional compensation for secondary on-call rotations, which directly addresses the question asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q07",
+    "question": "What is Northwind Cloud's 401(k) matching policy?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Northwind Cloud offers a 401(k) with a 4% match, dollar-for-dollar, vested immediately with no vesting cliff.",
+    "relevant_chunk_ids": [
+      "benefits-overview-0"
+    ],
+    "retrieved_chunk_ids": [
+      "benefits-overview-0",
+      "data-processing-agreement-0",
+      "remote-work-policy-0",
+      "authentication-0",
+      "parental-leave-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud offers a 401(k) retirement plan with a 4% match, dollar-for-dollar, vested immediately with no cliff. The match belongs to the employee from day one and enrollment is available at any time.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The 401(k) matching rate is 4%",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      },
+      {
+        "text": "The match is dollar-for-dollar",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      },
+      {
+        "text": "Vesting is immediate",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      },
+      {
+        "text": "There is no cliff on the match",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      },
+      {
+        "text": "Enrollment is available at any time",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "benefits-overview-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provided information about Northwind Cloud's 401(k) matching policy but did not specifically state that it offers a 4% match, dollar-for-dollar with no cliff, and that the match is vested immediately and available from day one. The question asked for the exact wording of the matching policy.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q08",
+    "question": "How many times does Northwind Cloud retry a failed webhook delivery, and on what schedule?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Northwind Cloud retries a failed webhook delivery 5 times, on a backoff schedule of 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours after the initial attempt.",
+    "relevant_chunk_ids": [
+      "webhooks-0"
+    ],
+    "retrieved_chunk_ids": [
+      "webhooks-0",
+      "billing-invoicing-0",
+      "rate-limits-0",
+      "sandbox-environment-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud retries a failed webhook delivery up to 5 times. The backoff schedule for these retries is 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours respectively, with no retry after the final attempt failure. After this sequence, if payment still fails, the account enters a grace period of an additional 7 days before being automatically downgraded to the Free tier.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud retries a failed webhook delivery up to 5 times.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      },
+      {
+        "text": "The backoff schedule for these retries is 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours respectively.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      },
+      {
+        "text": "After the final attempt failure, if payment still fails, the account enters a grace period of an additional 7 days before being automatically downgraded to the Free tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "webhooks-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided discusses the number of retries and the backoff schedule for failed webhook deliveries in Northwind Cloud, but it also includes additional information about payment failures leading to account downgrade. The question specifically asked only about the retry count and schedule.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q09",
+    "question": "What laptop do new employees receive, and how often is it refreshed?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "New employees are issued a MacBook Pro 14\" laptop, which is refreshed every 3 years (or sooner if hardware fails beyond economical repair).",
+    "relevant_chunk_ids": [
+      "equipment-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "equipment-policy-0",
+      "remote-work-policy-0",
+      "onboarding-checklist-0",
+      "data-processing-agreement-0",
+      "pto-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "New employees receive a standard-configuration MacBook Pro 14\" laptop. The laptop is refreshed every 3 years, or sooner if hardware fails and is beyond economical repair.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "New employees receive a standard-configuration MacBook Pro 14\" laptop.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "equipment-policy-0"
+        ]
+      },
+      {
+        "text": "The laptop is refreshed every 3 years, or sooner if hardware fails and is beyond economical repair.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "equipment-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific information about the type of laptop new employees receive (MacBook Pro 14\"), as well as its refresh cycle (every 3 years). While it does not include other aspects such as whether the laptop is refreshed sooner due to hardware failure, this level of detail directly addresses the core questions asked.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q10",
+    "question": "When is Northwind Cloud's weekly deploy freeze, and is there any exception to it?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "There is a deploy freeze every Friday after 2:00 PM through the following Monday morning, except for critical hotfixes approved by the on-call engineering lead.",
+    "relevant_chunk_ids": [
+      "deployment-process-0"
+    ],
+    "retrieved_chunk_ids": [
+      "deployment-process-0",
+      "status-page-0",
+      "api-versioning-0",
+      "webhooks-0",
+      "custom-domains-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud observes a deploy freeze every Friday after 2:00 PM in the primary engineering time zone, through the following Monday morning, except for critical hotfixes approved by the on-call engineering lead as part of the incident response process described in `incident-response.md`. This means there is an exception to the weekly deploy freeze for critical hotfixes.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "[deployment-process-0] The primary engineering time zone observes a deploy freeze every Friday after 2:00 PM, lasting until the following Monday morning.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "deployment-process-0"
+        ]
+      },
+      {
+        "text": "[deployment-process-0] There is an exception to the weekly deploy freeze for critical hotfixes approved by the on-call engineering lead as part of the incident response process described in `incident-response.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "deployment-process-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided does address the question asked, specifically mentioning that Northwind Cloud has a deploy freeze every Friday after 2:00 PM in the primary engineering time zone, except for critical hotfixes approved by the on-call engineering lead. The exception is clearly stated and relevant to the original query.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q11",
+    "question": "Which identity providers does Northwind Cloud support for SSO?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Northwind Cloud supports Okta, Azure AD, and Google Workspace as identity providers for SAML-based SSO.",
+    "relevant_chunk_ids": [
+      "sso-saml-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sso-saml-0",
+      "pricing-tiers-0",
+      "authentication-0",
+      "data-processing-agreement-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud supports Okta, Azure AD, and Google Workspace as identity providers for Single Sign-On (SSO).",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Northwind Cloud supports Okta as an identity provider for SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud supports Azure AD as an identity provider for SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud supports Google Workspace as an identity provider for SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided directly responds to the question by listing specific identity providers that Northwind Cloud supports for SSO. It addresses what identity providers are supported without delving into more technical details.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q12",
+    "question": "What is the minimum password length required by Northwind Cloud's security policy, and does the company force periodic password rotation?",
+    "difficulty": "easy",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Passwords must be at least 14 characters. Northwind Cloud does not enforce periodic forced password rotation; instead, passwords are checked against known-breach databases and must be changed immediately if a match is found.",
+    "relevant_chunk_ids": [
+      "security-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "security-policy-0",
+      "code-of-conduct-0",
+      "remote-work-policy-0",
+      "data-processing-agreement-0",
+      "authentication-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The minimum password length required by Northwind Cloud's security policy is 14 characters.\n\nNorthwind Cloud does not enforce periodic password rotation; it follows industry best practices that discourage mandatory password changes without cause. Instead, passwords are checked against known-breach databases and require immediate change if a match is found.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 0.5,
+    "has_unsupported_claim": true,
+    "claims": [
+      {
+        "text": "Passwords must be a minimum of 14 characters.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "authentication-0"
+        ]
+      },
+      {
+        "text": "Northwind Cloud forces periodic password rotation.",
+        "verdict": "unsupported",
+        "supporting_chunk_ids": []
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The provided answer partially addresses the first part of the question (minimum password length) but does not address the second part regarding whether periodic password rotation is enforced or not by Northwind Cloud's security policy. The answer shifts focus to mandatory password change requirements in case a password matches known-breach databases, which is not directly related to the original question.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q13",
+    "question": "If I'm on the Pro tier and my application starts hitting 429 errors, what's my rate limit and what retry strategy should I implement?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "The Pro tier is rate limited to 1,500 requests per minute. When you hit a 429, you should implement exponential backoff with jitter, starting at a 1-second delay and doubling on each subsequent 429, capped at 60 seconds, rather than retrying immediately in a tight loop.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0",
+      "rate-limits-0"
+    ],
+    "retrieved_chunk_ids": [
+      "rate-limits-0",
+      "error-codes-0",
+      "monitoring-alerting-0",
+      "api-quotas-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "On the Pro tier, your rate limit is set at 1,500 requests per minute. If you start encountering 429 Too Many Requests errors due to hitting this limit, a recommended retry strategy is to implement exponential backoff with jitter: initially wait for 1 second before retrying. Double the delay on each subsequent attempt up to a maximum of 60 seconds, ensuring not to retry immediately in tight loops as repeated immediate retries can trigger a temporary IP-level block independent of your API key's rate limit.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Your rate limit is set at 1,500 requests per minute on the Pro tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "rate-limits-0"
+        ]
+      },
+      {
+        "text": "If you start hitting this limit and encounter 429 Too Many Requests errors, a recommended retry strategy is to implement exponential backoff with jitter: initially wait for 1 second before retrying.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "rate-limits-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides specific information about the rate limit for the Pro tier and suggests an appropriate retry strategy using exponential backoff with jitter. While it does not directly state that the rate limit is 1,500 requests per minute, this can be inferred from context. The answer also addresses a key aspect of handling 429 errors by recommending a proper retry strategy.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q14",
+    "question": "Does the Pro tier include SSO? If not, what tier do I need, and what happens automatically when SSO is enabled?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "No, SSO/SAML is not included on the Pro tier \u2014 it's an Enterprise-only feature. Enabling SSO automatically enables audit logging for the account, and audit logs cannot be disabled while SSO remains active.",
+    "relevant_chunk_ids": [
+      "pricing-tiers-0",
+      "sso-saml-0"
+    ],
+    "retrieved_chunk_ids": [
+      "sso-saml-0",
+      "data-processing-agreement-0",
+      "pricing-tiers-0",
+      "authentication-0",
+      "audit-logs-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.9197207891481876,
+        "5": 0.9197207891481876,
+        "10": 0.9197207891481876
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "No, the Pro tier does not include SSO. To enable Single Sign-On (SSO), you would need to upgrade from the Pro tier to either the Enterprise tier or negotiate a custom pricing plan that includes SSO.\n\nWhen SSO is enabled on an Enterprise tier account:\n- User accounts are automatically provisioned by Northwind Cloud using just-in-time provisioning.\n- Audit logging for the account is automatically enabled since SSO-managed accounts require full records of authentication events.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The Pro tier does not include SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0"
+        ]
+      },
+      {
+        "text": "To enable Single Sign-On (SSO), you would need to upgrade from the Pro tier to either the Enterprise tier or negotiate a custom pricing plan that includes SSO.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0",
+          "pricing-tiers-0"
+        ]
+      },
+      {
+        "text": "When SSO is enabled on an Enterprise tier account, user accounts are automatically provisioned by Northwind Cloud using just-in-time provisioning.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0",
+          "data-processing-agreement-0"
+        ]
+      },
+      {
+        "text": "When SSO is enabled on an Enterprise tier account, audit logging for the account is automatically enabled since SSO-managed accounts require full records of authentication events.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "sso-saml-0",
+          "audit-logs-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses the question about whether the Pro tier includes Single Sign-On (SSO). It also provides information on what tiers are needed and what happens when SSO is enabled, which goes beyond just stating that the Pro tier does not include SSO.",
+    "context_utilization": 0.8,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q15",
+    "question": "If I'm on the Pro tier, how long is my data retained, and how does a GDPR deletion request affect that retention period?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "On the Pro tier, data is retained for 90 days. However, a GDPR data subject deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier.",
+    "relevant_chunk_ids": [
+      "data-retention-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieved_chunk_ids": [
+      "data-retention-0",
+      "data-processing-agreement-0",
+      "audit-logs-0",
+      "customer-support-sla-0",
+      "billing-invoicing-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "On the Pro tier, data is retained for 90 days. A GDPR deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier. Therefore, if a GDPR deletion request is made while on the Pro tier, the retention period would be reduced to 30 days for that specific record, with any remaining data retained according to the general 90-day Pro-tier policy.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "On the Pro tier, data is retained for 90 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "data-retention-0"
+        ]
+      },
+      {
+        "text": "A GDPR deletion request takes precedence over the standard retention window and is processed within 30 days regardless of tier.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "customer-support-sla-0",
+          "data-processing-agreement-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 2,
+    "answer_relevance_explanation": "The answer provided does not directly address how a GDPR deletion request affects the data retention period specifically when on the Pro tier. Instead, it describes a generalized approach where a GDPR deletion request takes precedence and results in a reduced retention period of 30 days for that specific record. The original question asked about the impact of a GDPR deletion request on existing data already being retained under the standard Pro-tier policy (90 days). Therefore, this answer fails to address the main query.",
+    "context_utilization": 0.6,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q16",
+    "question": "Walk me through what happens if I miss a payment on my Northwind Cloud invoice, from the missed payment to losing access to paid features.",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "If a payment fails, Northwind Cloud retries the charge up to 3 times over 7 days. If all attempts fail, there's an additional 7-day grace period with uninterrupted service but a payment warning banner. If payment still isn't received, the account is automatically downgraded to the Free tier, disabling tier-specific features like SSO, custom domains, and audit logs until payment is resolved.",
+    "relevant_chunk_ids": [
+      "billing-invoicing-0",
+      "pricing-tiers-0"
+    ],
+    "retrieved_chunk_ids": [
+      "billing-invoicing-0",
+      "webhooks-0",
+      "data-processing-agreement-0",
+      "custom-domains-0",
+      "customer-support-sla-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "recall_at_k": {
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "ndcg_at_k": {
+        "3": 0.6131471927654584,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "If you miss a payment on your Northwind Cloud invoice, it triggers an automatic downgrade of your account to the Free tier as per your contract terms. The grace period is then initiated with a banner showing in the dashboard indicating that service continues uninterrupted but any features tied to paid tiers like Single Sign-On (SSO), custom domains, and audit logs are disabled during this time. If payment is still not received after this grace period, which lasts for an additional 7 days, your account will be automatically downgraded further to the Free tier where all paid features including SSO, custom domains, and audit logs are fully disabled until you resolve the outstanding payment issue by manually upgrading your account back to a paid tier.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 0.6666666666666666,
+    "has_unsupported_claim": true,
+    "claims": [
+      {
+        "text": "Your account will be automatically downgraded from the Free tier to the Free tier if you miss a payment.",
+        "verdict": "unsupported",
+        "supporting_chunk_ids": []
+      },
+      {
+        "text": "Any features tied to paid tiers like Single Sign-On (SSO), custom domains, and audit logs are disabled during the grace period of an additional 7 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      },
+      {
+        "text": "Paid features including SSO, custom domains, and audit logs are fully disabled after the 7-day grace period if payment is still not received.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "billing-invoicing-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The provided answer describes the steps that occur after missing a payment on an invoice for Northwind Cloud services, including the automatic downgrade to the Free tier and the grace period followed by possible full feature deactivation if no payment is received within the grace period. The response does not directly address what happens specifically from the missed payment until losing access to paid features, but rather describes the entire process after a missed payment.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q17",
+    "question": "For a SEV1 incident, how quickly must the status page be updated, and when is a postmortem due?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "For a SEV1 incident, the on-call engineer must post an initial status page update within 15 minutes of declaring the incident, with updates at least every 30 minutes thereafter. A written postmortem is required within 5 business days of resolution.",
+    "relevant_chunk_ids": [
+      "incident-response-0",
+      "postmortem-process-0"
+    ],
+    "retrieved_chunk_ids": [
+      "incident-response-0",
+      "postmortem-process-0",
+      "status-page-0",
+      "disaster-recovery-0",
+      "rollback-procedure-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "For a SEV1 incident, the initial status page update must be posted within 15 minutes of declaring the incident. A written postmortem is required within 5 business days of resolution for every SEV1 and SEV2 incident, following the template and process in `postmortem-process.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "For a SEV1 incident, the initial status page update must be posted within 15 minutes of declaring the incident.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "status-page-0"
+        ]
+      },
+      {
+        "text": "A written postmortem is required within 5 business days of resolution for every SEV1 and SEV2 incident, following the template and process in `postmortem-process.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "incident-response-0",
+          "postmortem-process-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 3,
+    "answer_relevance_explanation": "The answer provided does address part of the question by giving details on how quickly a status page should be updated (within 15 minutes) and when a post-mortem is required. However, it also includes additional information about SEV2 incidents which was not requested in the original question.",
+    "context_utilization": 0.6,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q18",
+    "question": "If I need to roll back a deployment that included a database migration, what do I need to be careful about?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "A code rollback does not automatically reverse a schema migration. Migrations must be designed to be backwards-compatible with the previous code version for at least one deploy cycle, so services with database migrations require additional care beyond the typical 3-5 minute rollback for stateless services.",
+    "relevant_chunk_ids": [
+      "rollback-procedure-0",
+      "database-migration-runbook-0"
+    ],
+    "retrieved_chunk_ids": [
+      "rollback-procedure-0",
+      "database-migration-runbook-0",
+      "audit-logs-0",
+      "secrets-management-0",
+      "disaster-recovery-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "If you need to roll back a deployment that included a database migration, you need to ensure that all schema migrations are backwards-compatible with the previous application version for at least one full deploy cycle. This means applying new columns and tables in an additive phase first, followed by dropping old columns only after the new code path has been running successfully on production for at least 7 days. Additionally, any destructive operations like data-losing column drops must be verified as safe to execute.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "All schema migrations need to be backwards-compatible with the previous application version for at least one full deploy cycle.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      },
+      {
+        "text": "Applying new columns and tables in an additive phase is done first, followed by dropping old columns after the new code path has been running for at least 7 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      },
+      {
+        "text": "Destructive operations like data-losing column drops must be verified as safe to execute.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "database-migration-runbook-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided addresses potential issues and steps one would need to take when rolling back a deployment that included database migrations. It mentions ensuring backwards-compatibility with the previous application version, applying new schema changes in an additive phase first, verifying destructive operations like column drops as safe, and confirming successful operation for at least 7 days on production.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q19",
+    "question": "As a new fully-remote employee, what one-time equipment stipend do I get, and is that separate from my company laptop?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Remote employees receive a one-time $500 equipment stipend to set up a home office, which is separate from the standard company laptop that every employee is issued regardless of remote status.",
+    "relevant_chunk_ids": [
+      "remote-work-policy-0",
+      "equipment-policy-0"
+    ],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "onboarding-checklist-0",
+      "equipment-policy-0",
+      "benefits-overview-0",
+      "expense-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.9197207891481876,
+        "5": 0.9197207891481876,
+        "10": 0.9197207891481876
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "As a new fully-remote employee at Northwind Cloud, you receive a one-time $500 equipment stipend to set up a home office, which is separate from the standard company laptop issued on your start date. This stipend can be used for items like a desk, chair, monitor, and other necessary home office equipment. The stipend is paid via expense reimbursement following the process outlined in `expense-policy.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "You receive a one-time $500 equipment stipend to set up a home office",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "remote-work-policy-0"
+        ]
+      },
+      {
+        "text": "The stipend is paid via expense reimbursement following the process outlined in `expense-policy.md`",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "remote-work-policy-0",
+          "expense-policy-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 4,
+    "answer_relevance_explanation": "The answer provides information about a one-time $500 equipment stipend offered to new fully-remote employees at Northwind Cloud, which is separate from their standard company laptop. It also mentions that this stipend can be used for home office equipment and how it is paid out via expense reimbursement.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q20",
+    "question": "What's the maximum PTO carryover into the next year, and does parental leave draw down the same PTO balance?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "The maximum PTO carryover is 5 days. Parental leave is a separate, additional benefit and does not draw down an employee's standard PTO balance.",
+    "relevant_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0"
+    ],
+    "retrieved_chunk_ids": [
+      "pto-policy-0",
+      "parental-leave-0",
+      "benefits-overview-0",
+      "travel-policy-0",
+      "performance-reviews-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The maximum PTO carryover into the next year is up to 5 days. Parental leave does not draw down the standard PTO balance.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The maximum PTO carryover into the next year is up to 5 days.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "pto-policy-0"
+        ]
+      },
+      {
+        "text": "Parental leave does not draw down the standard PTO balance.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "parental-leave-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provided addresses both aspects of the question asked, stating the maximum PTO carryover and explaining that parental leave does not deplete the standard PTO balance. It directly answers two specific points.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q21",
+    "question": "If I need to run more than the standard number of data exports in an hour, what's the limit and what are my options?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "The bulk data export endpoint is limited to 10 requests per hour per account on every tier, including Enterprise. Enterprise customers who need a higher quota for frequent large exports can request a custom quota increase through their account manager.",
+    "relevant_chunk_ids": [
+      "data-export-0",
+      "api-quotas-0"
+    ],
+    "retrieved_chunk_ids": [
+      "data-export-0",
+      "api-quotas-0",
+      "data-processing-agreement-0",
+      "database-migration-runbook-0",
+      "monitoring-alerting-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "The export endpoint has a strict quota limited to 10 requests per hour for every tier including Enterprise. To exceed this per-endpoint quota, one can request a custom quota increase through their account manager; this is negotiated separately from the general custom rate limit mentioned in `rate-limits.md`.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "The export endpoint has a strict quota limited to 10 requests per hour for every tier including Enterprise.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "api-quotas-0"
+        ]
+      },
+      {
+        "text": "To exceed this per-endpoint quota, one can request a custom quota increase through their account manager; this is negotiated separately from the general custom rate limit mentioned in `rate-limits.md`.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "api-quotas-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 4,
+    "answer_relevance_explanation": "The answer provides information about an export endpoint's quota of 10 requests per hour for every tier. It also mentions how to request a custom quota increase if needed, which addresses part of the question regarding exceeding the standard limit.",
+    "context_utilization": 0.2,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q22",
+    "question": "How does the cadence of Northwind Cloud's quarterly access reviews compare to its disaster recovery drills?",
+    "difficulty": "medium",
+    "is_trap": false,
+    "strategy": "hybrid",
+    "reference_answer": "Both happen on a quarterly cadence \u2014 access grants are reviewed quarterly by IT and department heads, and disaster recovery drills simulating a full regional failover are also conducted quarterly \u2014 though the two processes are independent of one another.",
+    "relevant_chunk_ids": [
+      "access-control-runbook-0",
+      "disaster-recovery-0"
+    ],
+    "retrieved_chunk_ids": [
+      "disaster-recovery-0",
+      "performance-reviews-0",
+      "access-control-runbook-0",
+      "incident-response-0",
+      "api-versioning-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "recall_at_k": {
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg_at_k": {
+        "3": 0.9197207891481876,
+        "5": 0.9197207891481876,
+        "10": 0.9197207891481876
+      },
+      "mrr": 1.0
+    },
+    "generated_answer": "Northwind Cloud's quarterly access reviews mirror the cadence of its quarterly disaster recovery drills. Both processes are conducted on a quarterly basis, with access reviews occurring every quarter and disaster recovery drills also happening every quarter.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [
+      {
+        "text": "Both processes occur on a quarterly basis.",
+        "verdict": "supported",
+        "supporting_chunk_ids": [
+          "access-control-runbook-0",
+          "disaster-recovery-0"
+        ]
+      }
+    ],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer directly addresses how the cadence (frequency) of Northwind Cloud's quarterly access reviews compares to its disaster recovery drills by stating that they occur at the same frequency.",
+    "context_utilization": 0.4,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q23",
+    "question": "What is Northwind Cloud's policy on bringing pets or dogs to the office?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "hybrid",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated policy on pets or dogs in the office.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "code-of-conduct-0",
+      "data-processing-agreement-0",
+      "parental-leave-0",
+      "webhooks-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses the question by stating there is no relevant information available, which aligns with how the original question was asked and thus does not evade the question or provide an irrelevant response.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q24",
+    "question": "What is the bonus amount for an employee who refers a successful new hire?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "hybrid",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated employee referral bonus program.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "benefits-overview-0",
+      "performance-reviews-0",
+      "onboarding-checklist-0",
+      "equipment-policy-0",
+      "remote-work-policy-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses what was asked by acknowledging that the specific bonus amount cannot be determined based on the given information.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q25",
+    "question": "What uptime percentage does Northwind Cloud guarantee in its SLA (e.g., 99.9%)?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "hybrid",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. While there is a status page and support response-time SLAs, no specific uptime percentage guarantee is documented.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "customer-support-sla-0",
+      "pricing-tiers-0",
+      "api-versioning-0",
+      "data-processing-agreement-0",
+      "sdks-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses the question by confirming it cannot be answered based on the given context, which is a correct refusal.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q26",
+    "question": "Does Northwind Cloud have a policy about vegetarian or vegan snacks in the office kitchen?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "hybrid",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated office kitchen or snack policy.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "sdks-0",
+      "code-of-conduct-0",
+      "sso-saml-0",
+      "data-processing-agreement-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' is relevant because it correctly refuses to address the specific question due to lack of available information. It does not evade the question or provide an alternative irrelevant information.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q27",
+    "question": "What is Northwind Cloud's carbon offset or sustainability program?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "hybrid",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. There is no stated carbon offset or sustainability program.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "data-processing-agreement-0",
+      "remote-work-policy-0",
+      "sdks-0",
+      "status-page-0",
+      "api-versioning-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer provides a correct refusal to answering the question as it states there is no information available about Northwind Cloud's carbon offset or sustainability program in the given context. This response directly addresses what was asked and does not evade the question or provide irrelevant information.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  },
+  {
+    "question_id": "q28",
+    "question": "What signing bonus do new hires receive at Northwind Cloud?",
+    "difficulty": "trap",
+    "is_trap": true,
+    "strategy": "hybrid",
+    "reference_answer": "This is not covered in Northwind Cloud's documentation. The onboarding checklist describes day-one and first-two-weeks tasks but does not mention a signing bonus.",
+    "relevant_chunk_ids": [],
+    "retrieved_chunk_ids": [
+      "remote-work-policy-0",
+      "performance-reviews-0",
+      "authentication-0",
+      "onboarding-checklist-0",
+      "benefits-overview-0"
+    ],
+    "retrieval_metrics": {
+      "precision_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "recall_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg_at_k": {
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0
+    },
+    "generated_answer": "I don't have information about that in the provided context.",
+    "generator_model": "qwen2.5:3b",
+    "faithfulness_score": 1.0,
+    "has_unsupported_claim": false,
+    "claims": [],
+    "answer_relevance_score": 5,
+    "answer_relevance_explanation": "The answer 'I don't have information about that in the provided context' directly addresses what was asked, which is specific details about signing bonuses for new hires at Northwind Cloud. The question cannot be answered based on the available information.",
+    "context_utilization": 0.0,
+    "judge_model": "qwen2.5:3b"
+  }
+]

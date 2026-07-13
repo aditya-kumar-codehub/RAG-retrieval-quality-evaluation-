@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: rag-eval-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: RAG_EVAL_BACKEND
+        value: api
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: "https://rag-eval-frontend.onrender.com"
+      - key: GENERATE_RATE_LIMIT
+        value: "5/hour"
+      - key: RETRIEVE_RATE_LIMIT
+        value: "60/hour"
+
+  - type: web
+    name: rag-eval-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: "https://rag-eval-backend.onrender.com"
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

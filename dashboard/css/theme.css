@@ -1,0 +1,778 @@
+/* ==========================================================================
+   RAG Retrieval Quality — Dashboard Theme
+   Dark-mode-first glass/gradient SaaS aesthetic (Linear/Vercel/Stripe-adjacent).
+   Selectors target Streamlit's data-testid attributes, which are stable
+   across versions — never the hashed .css-XXXXX classes, which are not.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Surfaces ---- */
+  --bg-base: #08080c;
+  --bg-glow-a: rgba(91, 140, 255, 0.16);
+  --bg-glow-b: rgba(167, 139, 250, 0.14);
+  --surface-1: rgba(255, 255, 255, 0.035);
+  --surface-2: rgba(255, 255, 255, 0.055);
+  --surface-solid: #101018;
+  --border-glass: rgba(255, 255, 255, 0.09);
+  --border-glass-strong: rgba(255, 255, 255, 0.16);
+
+  /* ---- Ink ---- */
+  --ink-primary: #f4f4f7;
+  --ink-secondary: #a4a4b3;
+  --ink-muted: #6c6c7c;
+
+  /* ---- Accent (brand gradient) ---- */
+  --accent-blue: #5b8cff;
+  --accent-purple: #a78bfa;
+  --accent-gradient: linear-gradient(135deg, #5b8cff 0%, #a78bfa 100%);
+  --accent-gradient-soft: linear-gradient(135deg, rgba(91,140,255,0.16) 0%, rgba(167,139,250,0.16) 100%);
+
+  /* ---- Strategy series (BM25 / Dense / Hybrid) ---- */
+  --series-bm25: #5b8cff;
+  --series-dense: #2dd4bf;
+  --series-hybrid: #a78bfa;
+
+  /* ---- Status ---- */
+  --status-good: #34d399;
+  --status-warning: #fbbf24;
+  --status-critical: #f87171;
+
+  /* ---- Type ---- */
+  --font-display: 'Manrope', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 9px;
+  --shadow-card: 0 1px 1px rgba(0,0,0,0.2), 0 12px 32px rgba(0,0,0,0.35);
+  --shadow-glow: 0 0 0 1px rgba(255,255,255,0.06), 0 20px 60px -12px rgba(91,140,255,0.25);
+}
+
+/* ==========================================================================
+   Base canvas
+   ========================================================================== */
+
+html, body, [data-testid="stAppViewContainer"] {
+  background: var(--bg-base) !important;
+  color: var(--ink-primary);
+  font-family: var(--font-body);
+}
+
+[data-testid="stAppViewContainer"] {
+  background-image:
+    radial-gradient(ellipse 900px 500px at 12% -8%, var(--bg-glow-a), transparent 60%),
+    radial-gradient(ellipse 800px 500px at 88% 0%, var(--bg-glow-b), transparent 60%);
+  background-attachment: fixed;
+}
+
+[data-testid="stHeader"] {
+  background: transparent !important;
+}
+
+/* Hide Streamlit's default chrome so the custom shell reads as a product, not a script */
+#MainMenu, footer[class], [data-testid="stToolbar"], [data-testid="stDecoration"] {
+  visibility: hidden;
+  height: 0;
+}
+
+.block-container {
+  padding-top: 1.75rem;
+  padding-bottom: 3rem;
+  max-width: 1220px;
+}
+
+h1, h2, h3, h4, h5, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+  font-family: var(--font-display);
+  color: var(--ink-primary);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+p, li, span, label {
+  color: var(--ink-secondary);
+}
+
+code, .mono {
+  font-family: var(--font-mono) !important;
+}
+
+a { color: var(--accent-blue); }
+
+::selection { background: rgba(91,140,255,0.28); color: var(--ink-primary); }
+
+*:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, rgba(16,16,24,0.92), rgba(10,10,15,0.96));
+  border-right: 1px solid var(--border-glass);
+  /* No backdrop-filter here: at 92-96% opacity there's barely anything of the
+     page behind it left to blur, so the blur cost bought almost no visible
+     effect — removing it is a free win, not a visual tradeoff. */
+}
+[data-testid="stSidebar"] > div:first-child {
+  padding-top: 1.25rem;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px 20px;
+  border-bottom: 1px solid var(--border-glass);
+  margin-bottom: 18px;
+}
+.sidebar-logo-mark {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  background: var(--accent-gradient);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  color: #08080c;
+  flex: none;
+  box-shadow: 0 4px 16px -4px rgba(91,140,255,0.55);
+}
+.sidebar-logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--ink-primary);
+  line-height: 1.2;
+}
+.sidebar-logo-sub {
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.run-info-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 12px 13px;
+  margin-top: 18px;
+  font-size: 11.5px;
+}
+.run-info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 0;
+  font-family: var(--font-mono);
+  color: var(--ink-secondary);
+}
+.run-info-row b { color: var(--ink-primary); font-weight: 500; }
+.status-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--status-good);
+  margin-right: 6px;
+  box-shadow: 0 0 8px var(--status-good);
+  animation: pulseDot 2.4s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* streamlit-option-menu overrides — targets its own emitted classes (stable, not Streamlit-hashed) */
+.nav-link {
+  font-family: var(--font-body) !important;
+  font-weight: 500 !important;
+  border-radius: var(--radius-sm) !important;
+  margin: 3px 0 !important;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover {
+  background: var(--surface-2) !important;
+}
+.nav-link-selected {
+  background: var(--accent-gradient-soft) !important;
+  color: var(--ink-primary) !important;
+  font-weight: 600 !important;
+  box-shadow: inset 0 0 0 1px rgba(91,140,255,0.35);
+}
+
+/* ==========================================================================
+   Glass cards & generic components
+   ========================================================================== */
+
+/* .glass-card is used two ways: (1) as a class inside a single, self-contained
+   HTML string passed to one st.markdown() call — safe, since the div is
+   opened and closed within that one call; (2) applied to a
+   `st.container(key="glass_...", border=False)` — required whenever the card
+   needs to wrap MULTIPLE separate Streamlit calls (e.g. a title markdown +
+   a st.plotly_chart), since each st.markdown() call is its own isolated DOM
+   fragment in Streamlit — a <div> opened in one call and closed in a later
+   one would not actually wrap anything in between. Any container key
+   prefixed "glass_" picks up the same styling via the attribute selector. */
+.glass-card,
+div[class*="st-key-glass_"] {
+  background: var(--surface-1);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+  padding: 24px 26px;
+  /* border-color only, deliberately — animating `transform` on an element with
+     backdrop-filter forces the browser to recomposite the blurred backdrop on
+     every frame of the hover transition. With 5-6 cards on screen at once
+     (Analytics, About), that combo is a real, measurable source of jank as the
+     cursor moves across the page. A border-color change alone doesn't. */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.glass-card:hover,
+div[class*="st-key-glass_"]:hover {
+  border-color: var(--border-glass-strong);
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in.d1 { animation-delay: 0.05s; }
+.fade-in.d2 { animation-delay: 0.12s; }
+.fade-in.d3 { animation-delay: 0.19s; }
+.fade-in.d4 { animation-delay: 0.26s; }
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  padding: 46px 44px 40px;
+  border-radius: 26px;
+  border: 1px solid var(--border-glass);
+  background:
+    radial-gradient(600px 240px at 15% 0%, rgba(91,140,255,0.20), transparent 70%),
+    radial-gradient(500px 240px at 90% 10%, rgba(167,139,250,0.18), transparent 70%),
+    var(--surface-1);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+}
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.08;
+  margin: 0 0 16px;
+  max-width: 16ch;
+}
+.hero-desc {
+  font-size: 15.5px;
+  color: var(--ink-secondary);
+  max-width: 62ch;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+/* ---- Animated stat counters ---- */
+.stat-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.stat-item { min-width: 100px; }
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--ink-primary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---- CTA buttons ---- */
+div[data-testid="stButton"] > button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13.5px;
+  border-radius: 999px;
+  padding: 10px 22px;
+  border: 1px solid var(--border-glass-strong);
+  background: var(--surface-2);
+  color: var(--ink-primary);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+div[data-testid="stButton"] > button:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 8px 24px -8px rgba(91,140,255,0.45);
+}
+div[data-testid="stButton"] > button:active { transform: translateY(0); }
+
+/* Streamlit wraps a button's label text in its own <p> (for rich-text
+   support even on a plain string label). `color` is inherited, but
+   inheritance is the *lowest*-priority source in the cascade — it loses to
+   ANY explicit rule on the descendant itself, `!important` or not. The
+   global `p, li, span, label { color: var(--ink-secondary) }` rule above
+   was therefore silently winning over every button's intended text color,
+   including the CTA gradient buttons. Force inheritance back on explicitly. */
+div[data-testid="stButton"] button p,
+div[data-testid="stButton"] button span {
+  color: inherit !important;
+}
+
+div[class*="st-key-cta_primary_"] button {
+  background: var(--accent-gradient) !important;
+  color: #08080c !important;
+  border: none !important;
+  font-weight: 700 !important;
+}
+div[class*="st-key-cta_primary_"] button:hover {
+  box-shadow: 0 10px 28px -8px rgba(91,140,255,0.6) !important;
+}
+
+/* ---- KPI cards ---- */
+.kpi-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2.5px;
+  background: var(--accent-gradient);
+  opacity: 0.9;
+}
+.kpi-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kpi-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--ink-primary);
+  font-variant-numeric: tabular-nums;
+}
+.kpi-value small { font-size: 13px; color: var(--ink-muted); font-weight: 500; }
+.kpi-sub {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin-top: 4px;
+}
+.pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+.pill-good { background: rgba(52,211,153,0.14); color: var(--status-good); }
+.pill-warning { background: rgba(251,191,36,0.14); color: var(--status-warning); }
+.pill-critical { background: rgba(248,113,113,0.14); color: var(--status-critical); }
+.pill-accent { background: var(--accent-gradient-soft); color: var(--accent-blue); }
+
+/* ---- Progress bars ---- */
+.progress-row { margin-bottom: 14px; }
+.progress-row-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  margin-bottom: 6px;
+}
+.progress-row-head b { color: var(--ink-primary); font-weight: 600; }
+.progress-track {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Section headers ---- */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--ink-primary);
+  margin: 0 0 3px;
+  letter-spacing: -0.01em;
+}
+.section-sub {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+
+/* ---- Placeholder / coming-soon panel ---- */
+.coming-soon {
+  border: 1px dashed var(--border-glass-strong);
+  border-radius: var(--radius-lg);
+  padding: 60px 40px;
+  text-align: center;
+  color: var(--ink-muted);
+}
+.coming-soon-icon { font-size: 30px; margin-bottom: 12px; }
+.coming-soon h3 { color: var(--ink-secondary); margin-bottom: 6px; }
+
+/* ---- Footer ---- */
+.app-footer {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-glass);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+/* ---- Streamlit component restyling ---- */
+[data-testid="stMetric"] {
+  background: var(--surface-1);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+[data-testid="stMetricLabel"] { font-family: var(--font-mono); color: var(--ink-muted); }
+[data-testid="stMetricValue"] { font-family: var(--font-display); color: var(--ink-primary); }
+
+div[data-baseweb="select"] > div {
+  background: var(--surface-1) !important;
+  border-color: var(--border-glass) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+[data-testid="stDataFrame"] {
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+hr { border-color: var(--border-glass); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 30px; }
+  .stat-row { gap: 24px; }
+}
+
+/* ==========================================================================
+   Data Explorer additions
+   ========================================================================== */
+
+.strategy-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: #08080c;
+  letter-spacing: 0.02em;
+}
+
+.chunk-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-glass);
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin: 0 5px 5px 0;
+  color: var(--ink-secondary);
+}
+.chunk-pill.is-gold { border-color: var(--status-good); color: var(--status-good); }
+
+.claim-row {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  font-size: 13px;
+  padding: 9px 11px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  color: var(--ink-secondary);
+}
+.claim-row.v-supported { background: rgba(52,211,153,0.09); }
+.claim-row.v-unsupported { background: rgba(248,113,113,0.09); }
+.claim-row.v-partial { background: rgba(251,191,36,0.09); }
+.claim-icon { flex: none; font-family: var(--font-mono); font-weight: 700; font-size: 12px; }
+.claim-row.v-supported .claim-icon { color: var(--status-good); }
+.claim-row.v-unsupported .claim-icon { color: var(--status-critical); }
+.claim-row.v-partial .claim-icon { color: var(--status-warning); }
+
+.answer-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  font-size: 13.5px;
+  color: var(--ink-primary);
+  line-height: 1.6;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin: 16px 0 7px;
+}
+.field-label:first-child { margin-top: 0; }
+
+/* Native widget restyle for filter row */
+div[data-testid="stTextInput"] input {
+  background: var(--surface-1) !important;
+  border-color: var(--border-glass) !important;
+  color: var(--ink-primary) !important;
+  border-radius: var(--radius-sm) !important;
+}
+[data-baseweb="tag"] {
+  background: var(--accent-gradient-soft) !important;
+  border: 1px solid rgba(91,140,255,0.3) !important;
+}
+div[data-testid="stMultiSelect"] span[data-baseweb="tag"] span { color: var(--ink-primary) !important; }
+
+button[kind="secondary"], button[kind="primary"] {
+  border-radius: 999px !important;
+}
+
+[data-testid="stToggle"] label div[data-checked="true"] {
+  background: var(--accent-gradient) !important;
+}
+
+/* ==========================================================================
+   Query Explorer additions
+   ========================================================================== */
+
+.swatch {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 3px;
+}
+
+.result-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+  margin-bottom: 9px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.result-card:hover {
+  border-color: var(--border-glass-strong);
+  transform: translateX(2px);
+}
+.result-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  flex-wrap: wrap;
+}
+.result-rank {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #08080c;
+  padding: 1px 7px;
+  border-radius: 999px;
+  flex: none;
+}
+.result-score {
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  margin-left: auto;
+}
+.result-snippet {
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+}
+
+textarea, div[data-baseweb="textarea"] textarea {
+  background: var(--surface-1) !important;
+  border-color: var(--border-glass) !important;
+  color: var(--ink-primary) !important;
+  border-radius: var(--radius-sm) !important;
+}
+[data-testid="stSlider"] [role="slider"] {
+  background: var(--accent-gradient) !important;
+}
+
+/* ==========================================================================
+   Insights additions
+   ========================================================================== */
+
+.insight-card {
+  min-height: 178px;
+  margin-bottom: 14px;
+}
+.insight-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.insight-icon { font-size: 20px; line-height: 1; }
+.insight-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink-primary);
+  margin-bottom: 8px;
+}
+.insight-body {
+  font-size: 13px;
+  color: var(--ink-secondary);
+  line-height: 1.65;
+}
+.insight-body b { color: var(--ink-primary); font-weight: 600; }
+.insight-body code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: var(--surface-2);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--accent-blue);
+}
+.insight-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.insight-list li {
+  margin-bottom: 5px;
+  font-size: 12.5px;
+}
+
+/* ==========================================================================
+   About page additions
+   ========================================================================== */
+
+.workflow-step {
+  text-align: center;
+  padding: 4px 6px;
+  position: relative;
+}
+.workflow-icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.workflow-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--ink-primary);
+  margin-bottom: 5px;
+}
+.workflow-desc {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+.workflow-arrow {
+  position: absolute;
+  top: 8px;
+  right: -14px;
+  color: var(--accent-blue);
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.tech-group-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin: 14px 0 8px;
+}
+.tech-group-label:first-of-type { margin-top: 0; }
+.tech-badges { display: flex; flex-wrap: wrap; gap: 7px; }
+.tech-badge {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-glass);
+  border-radius: 7px;
+  padding: 4px 10px;
+  color: var(--ink-secondary);
+}
+
+.stat-table { display: flex; flex-direction: column; }
+.stat-table-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-glass);
+  font-size: 13px;
+  color: var(--ink-secondary);
+}
+.stat-table-row:last-child { border-bottom: none; }
+.stat-table-row span:last-child { color: var(--ink-primary); font-weight: 600; }

@@ -1,0 +1,12 @@
+streamlit>=1.35,<2.0
+streamlit-option-menu>=0.3.13
+plotly>=5.22
+pandas>=2.2
+numpy>=1.26
+watchdog>=4.0  # efficient OS-level file watching instead of polling
+
+# The core rag_eval library (retrievers, generation, judge) — installed as a
+# regular (non-editable) package from the parent project directory. Run
+# `pip install -r requirements.txt` from *inside* dashboard/ so this
+# relative path resolves correctly.
+../
