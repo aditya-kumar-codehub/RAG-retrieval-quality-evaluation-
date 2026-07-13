@@ -12,7 +12,7 @@ services:
       - key: GROQ_API_KEY
         sync: false
       - key: ALLOWED_ORIGINS
-        value: "https://rag-eval-frontend.onrender.com"
+        value: "https://rag-eval-frontend-rjxu.onrender.com"
       - key: GENERATE_RATE_LIMIT
         value: "5/hour"
       - key: RETRIEVE_RATE_LIMIT
@@ -28,7 +28,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
-        value: "https://rag-eval-backend.onrender.com"
+        value: "https://rag-eval-backend-msep.onrender.com"
     routes:
       - type: rewrite
         source: /*
