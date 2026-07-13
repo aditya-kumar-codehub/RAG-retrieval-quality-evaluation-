@@ -6,14 +6,14 @@ import { Badge } from "@/components/ui/badge";
 const PIPELINE_STEPS = [
   { title: "Corpus + eval set", detail: "40 synthetic internal-docs pages, 28 labeled questions (single-hop, multi-hop, trap)." },
   { title: "Retrieval", detail: "BM25 (lexical), dense embeddings (sentence-transformers), and hybrid RRF fusion of both." },
-  { title: "Generation", detail: "An LLM answers each question grounded only in its retrieved chunks — local Ollama or Anthropic API, interchangeably." },
+  { title: "Generation", detail: "An LLM answers each question grounded only in its retrieved chunks — local Ollama, Groq, or the Anthropic API, interchangeably." },
   { title: "Judging", detail: "A separate LLM-as-judge pass extracts atomic claims and checks each against the retrieved context (RAGAS-style faithfulness), plus a 1–5 answer-relevance score." },
   { title: "Scoring", detail: "Ground-truth Precision/Recall/NDCG/MRR@k against labeled relevant chunks, plus hallucination rate and trap-question abstention." },
 ];
 
 const STACK = [
   { icon: Cpu, label: "Core library", items: ["Python 3.11+", "rank-bm25", "sentence-transformers", "numpy / pandas"] },
-  { icon: Server, label: "Backend", items: ["FastAPI", "Pydantic", "slowapi rate limiting", "Ollama / Anthropic SDK"] },
+  { icon: Server, label: "Backend", items: ["FastAPI", "Pydantic", "slowapi rate limiting", "Ollama / Groq / Anthropic"] },
   { icon: Layers, label: "Frontend", items: ["React + Vite", "TypeScript", "Tailwind CSS", "Framer Motion", "Recharts"] },
 ];
 

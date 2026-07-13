@@ -9,19 +9,29 @@ from __future__ import annotations
 
 from rag_eval.generation import GeneratedAnswer, generate_answer
 from rag_eval.judge import FaithfulnessResult, RelevanceResult, judge_answer_relevance, judge_faithfulness
-from rag_eval.llm import DEFAULT_ANTHROPIC_MODEL, DEFAULT_OLLAMA_MODEL, LLMBackend, build_backend
+from rag_eval.llm import (
+    DEFAULT_ANTHROPIC_MODEL,
+    DEFAULT_GROQ_MODEL,
+    DEFAULT_OLLAMA_MODEL,
+    LLMBackend,
+    build_backend,
+)
 
 from app.core.config import GENERATION_BACKEND, GENERATION_MODEL
 
 _backend: LLMBackend | None = None
 
+_DEFAULT_MODELS = {
+    "local": DEFAULT_OLLAMA_MODEL,
+    "api": DEFAULT_ANTHROPIC_MODEL,
+    "groq": DEFAULT_GROQ_MODEL,
+}
+
 
 def init_backend() -> None:
     """Construct the configured LLM backend once. Call from the app's startup hook."""
     global _backend
-    model = GENERATION_MODEL or (
-        DEFAULT_OLLAMA_MODEL if GENERATION_BACKEND == "local" else DEFAULT_ANTHROPIC_MODEL
-    )
+    model = GENERATION_MODEL or _DEFAULT_MODELS.get(GENERATION_BACKEND, DEFAULT_ANTHROPIC_MODEL)
     _backend = build_backend(GENERATION_BACKEND, model)
 
 

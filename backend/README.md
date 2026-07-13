@@ -36,13 +36,19 @@ silently flagged hidden, breaking the import.
 | Var | Default | Purpose |
 |---|---|---|
 | `ALLOWED_ORIGINS` | `http://localhost:5173` | Comma-separated CORS allowlist |
-| `RAG_EVAL_BACKEND` | `api` | `local` (Ollama) or `api` (Anthropic) for generation/judging |
+| `RAG_EVAL_BACKEND` | `groq` | `local` (Ollama), `groq` (free tier), or `api` (Anthropic, paid) for generation/judging |
 | `RAG_EVAL_MODEL` | backend's own default | Override the model name |
 | `GENERATE_RATE_LIMIT` | `5/hour` | Per-IP limit on `/api/generate` |
 | `RETRIEVE_RATE_LIMIT` | `60/hour` | Per-IP limit on `/api/retrieve` |
+| `GROQ_API_KEY` | — | Required when `RAG_EVAL_BACKEND=groq` — free key at [console.groq.com/keys](https://console.groq.com/keys) |
 | `ANTHROPIC_API_KEY` | — | Required when `RAG_EVAL_BACKEND=api` |
 
 `local` needs an Ollama server reachable from this process — fine for local
-dev (`ollama serve`), impractical on most hosting tiers, which is why
-production defaults to `api`. See [`../DEPLOYMENT.md`](../DEPLOYMENT.md) for
-the Render setup.
+dev (`ollama serve`), impractical on most hosting tiers. Production defaults
+to `groq` specifically so a public deployment costs $0 — Groq's free tier
+has its own rate limits (check current numbers at
+[console.groq.com/docs](https://console.groq.com/docs) after signing up);
+this app's own `GENERATE_RATE_LIMIT` throttle is deliberately conservative
+enough to stay well under them. Switch to `api` if you'd rather pay for
+Claude's answer quality. See [`../DEPLOYMENT.md`](../DEPLOYMENT.md) for the
+Render setup.

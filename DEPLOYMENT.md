@@ -28,21 +28,35 @@ gh repo create <your-repo-name> --private --source=. --push
 #   git remote add origin <url> && git push -u origin main
 ```
 
-## 2. Get an Anthropic API key
+## 2. Get a Groq API key (free)
 
-The backend defaults `RAG_EVAL_BACKEND=api` in production (local Ollama isn't
-reachable from Render). You'll need an `ANTHROPIC_API_KEY` — get one at
-console.anthropic.com. **Set a spend limit on the key before deploying** —
-this endpoint is public and rate-limited, but rate limits bound *frequency*,
-not a hard dollar cap.
+The backend defaults `RAG_EVAL_BACKEND=groq` in production (local Ollama
+isn't reachable from Render, and Groq's free tier avoids per-request
+Anthropic API cost on a public endpoint). Get a free key at
+[console.groq.com/keys](https://console.groq.com/keys) — no card required
+for the free tier. Set it as `GROQ_API_KEY` when Render's blueprint prompts
+for it in step 3.
+
+Groq's free tier has its own rate limits that can change over time — check
+current numbers at [console.groq.com/docs](https://console.groq.com/docs)
+after signing up. This app's own `GENERATE_RATE_LIMIT` (default `5/hour` per
+visitor) is deliberately conservative and should stay well under them, but
+if you see 429s from Groq itself in the backend logs, either lower
+`GENERATE_RATE_LIMIT` further or switch `RAG_EVAL_MODEL` to a smaller/faster
+free-tier model.
+
+If you'd rather pay for Claude's answer quality instead, set
+`RAG_EVAL_BACKEND=api` and `ANTHROPIC_API_KEY` on the backend service (get a
+key at console.anthropic.com and **set a spend limit before deploying** —
+rate limits here bound *frequency*, not a hard dollar cap).
 
 ## 3. Deploy the Blueprint
 
 In the Render dashboard: **New → Blueprint**, point it at your GitHub repo.
 Render will read `render.yaml` and propose both services. Before confirming:
 
-- It will prompt for `ANTHROPIC_API_KEY` (marked `sync: false` in the
-  blueprint so it's never committed) — paste your key.
+- It will prompt for `GROQ_API_KEY` (marked `sync: false` in the blueprint
+  so it's never committed) — paste your free key.
 - Both services default to placeholder URLs
   (`rag-eval-backend.onrender.com` / `rag-eval-frontend.onrender.com`) in
   `render.yaml`'s `ALLOWED_ORIGINS` and `VITE_API_BASE_URL`. Render service

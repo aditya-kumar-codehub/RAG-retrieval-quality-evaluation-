@@ -8,8 +8,8 @@ services:
     healthCheckPath: /api/health
     envVars:
       - key: RAG_EVAL_BACKEND
-        value: api
-      - key: ANTHROPIC_API_KEY
+        value: groq
+      - key: GROQ_API_KEY
         sync: false
       - key: ALLOWED_ORIGINS
         value: "https://rag-eval-frontend.onrender.com"
