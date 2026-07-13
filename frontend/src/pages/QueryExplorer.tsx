@@ -229,10 +229,16 @@ function EmptyState({ label }: { label: string }) {
 }
 
 function ErrorBanner({ error }: { error: Error }) {
-  const message =
-    error instanceof ApiError && error.status === 429
-      ? "Rate limit reached for this demo — please wait a bit and try again."
-      : error.message;
+  let message = error.message;
+  if (error instanceof ApiError) {
+    if (error.status === 429) {
+      message = "Rate limit reached for this demo — please wait a bit and try again.";
+    } else if (error.status === 502) {
+      message = "The LLM provider is temporarily overloaded (this is on their end, not this demo) — please retry in a few seconds.";
+    } else if (error.status === 503) {
+      message = "This service is still warming up — please retry in a few seconds.";
+    }
+  }
   return (
     <div className="flex items-start gap-2 rounded-[var(--radius-md)] border border-status-critical/30 bg-status-critical/8 p-3 text-[12.5px] text-status-critical">
       <AlertCircle className="mt-0.5 size-4 shrink-0" />
