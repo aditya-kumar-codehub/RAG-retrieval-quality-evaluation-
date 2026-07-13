@@ -42,3 +42,14 @@ GENERATION_MODEL = os.environ.get("RAG_EVAL_MODEL", "")  # "" = backend's own de
 # cheap (local CPU only) and gets a looser limit.
 GENERATE_RATE_LIMIT = os.environ.get("GENERATE_RATE_LIMIT", "5/hour")
 RETRIEVE_RATE_LIMIT = os.environ.get("RETRIEVE_RATE_LIMIT", "60/hour")
+
+# Which strategies the LIVE /api/retrieve and /api/generate endpoints index
+# and serve. "dense" and "hybrid" load a sentence-transformers model (torch +
+# transformers), which alone is enough to exceed a 512MB free-tier RAM cap —
+# see backend/README.md. Defaults to all three for local dev; Render's
+# render.yaml overrides this to "bm25" only. The historical Overview/
+# Analytics/Data Explorer pages are unaffected either way — they read the
+# precomputed results.json from the real evaluation run, not live compute.
+LIVE_STRATEGIES = [
+    s.strip() for s in os.environ.get("LIVE_STRATEGIES", "bm25,dense,hybrid").split(",") if s.strip()
+]

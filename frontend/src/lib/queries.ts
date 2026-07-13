@@ -16,3 +16,7 @@ export function useSummary(run?: string) {
 export function useCorpusStats() {
   return useQuery({ queryKey: ["corpus-stats"], queryFn: api.corpusStats });
 }
+
+export function useHealth() {
+  return useQuery({ queryKey: ["health"], queryFn: api.health, staleTime: 60 * 1000 });
+}

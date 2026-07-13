@@ -116,7 +116,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  health: () => request<{ status: string }>("/api/health"),
+  health: () => request<{ status: string; live_strategies: Strategy[] }>("/api/health"),
   runs: () => request<{ runs: string[] }>("/api/runs"),
   results: (run?: string) =>
     request<EvalResult[]>(`/api/results${run ? `?run=${encodeURIComponent(run)}` : ""}`),

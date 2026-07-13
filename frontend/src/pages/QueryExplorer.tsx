@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Search, AlertCircle, FileSearch } from "lucide-react";
+import { Sparkles, Search, AlertCircle, FileSearch, Info } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,8 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { StrategyTag } from "@/components/StrategyTag";
 import { InlineSpinner } from "@/components/StateViews";
-import { api, ApiError, type GenerateResponse, type RetrieveResponse, type Strategy } from "@/lib/api";
+import { useHealth } from "@/lib/queries";
+import { api, ApiError, STRATEGY_LABELS, type GenerateResponse, type RetrieveResponse, type Strategy } from "@/lib/api";
 import { pct } from "@/lib/format";
 
 const SAMPLE_QUESTIONS = [
@@ -22,7 +23,16 @@ const SAMPLE_QUESTIONS = [
 
 export function QueryExplorer() {
   const [question, setQuestion] = useState("");
-  const [strategy, setStrategy] = useState<Strategy>("hybrid");
+  const [strategy, setStrategy] = useState<Strategy>("bm25");
+  const health = useHealth();
+  const availableStrategies = health.data?.live_strategies ?? ["bm25", "dense", "hybrid"];
+  const isRestricted = health.data && health.data.live_strategies.length < 3;
+
+  useEffect(() => {
+    if (health.data && !health.data.live_strategies.includes(strategy)) {
+      setStrategy(health.data.live_strategies[0] ?? "bm25");
+    }
+  }, [health.data, strategy]);
 
   const retrieveMutation = useMutation({
     mutationFn: () => api.retrieve(question, strategy, 5),
@@ -41,6 +51,21 @@ export function QueryExplorer() {
         description="Ask a question against the real corpus. Retrieval runs on every request; answer generation is rate-limited since it calls a live LLM."
       />
 
+      {isRestricted && (
+        <div className="mb-4 flex items-start gap-2 rounded-[var(--radius-md)] border border-accent/25 bg-accent/8 p-3 text-[12.5px] text-text-secondary">
+          <Info className="mt-0.5 size-4 shrink-0 text-accent" />
+          <span>
+            This public deployment only runs <strong className="text-text-primary">BM25</strong> live — dense and
+            hybrid retrieval need an embedding model that doesn't fit this server's free-tier memory. All three
+            strategies are still fully compared with real numbers on the{" "}
+            <a href="/analytics" className="underline underline-offset-2">
+              Analytics
+            </a>{" "}
+            page, from the saved evaluation run.
+          </span>
+        </div>
+      )}
+
       <Card className="p-5">
         <div className="flex flex-col gap-3 sm:flex-row">
           <Input
@@ -57,9 +82,11 @@ export function QueryExplorer() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="bm25">BM25</SelectItem>
-              <SelectItem value="dense">Dense</SelectItem>
-              <SelectItem value="hybrid">Hybrid (RRF)</SelectItem>
+              {availableStrategies.map((s) => (
+                <SelectItem key={s} value={s}>
+                  {STRATEGY_LABELS[s]}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>

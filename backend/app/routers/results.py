@@ -7,13 +7,14 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, Query
 
 from app.services import data as data_service
+from app.services import retrieval as retrieval_service
 
 router = APIRouter(prefix="/api", tags=["results"])
 
 
 @router.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, object]:
+    return {"status": "ok", "live_strategies": retrieval_service.available_strategies()}
 
 
 @router.get("/runs")

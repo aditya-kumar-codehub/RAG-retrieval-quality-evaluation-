@@ -17,6 +17,8 @@ services:
         value: "5/hour"
       - key: RETRIEVE_RATE_LIMIT
         value: "60/hour"
+      - key: LIVE_STRATEGIES
+        value: "bm25"
 
   - type: web
     name: rag-eval-frontend
